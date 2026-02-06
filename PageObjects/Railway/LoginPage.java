@@ -6,26 +6,26 @@ import Constant.Constant;
 
 public class LoginPage extends GeneralPage {
     // Locators
-    private final By _txtUsername = By.xpath("//input[@id='username']");
-    private final By _txtPassword = By.xpath("//input[@id='password']");
-    private final By _btnLogin = By.xpath("//input[@value='login']");
-    private final By _lblLoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
+    private final By txtUsername = By.xpath("//input[@id='username']");
+    private final By txtPassword = By.xpath("//input[@id='password']");
+    private final By btnLogin = By.xpath("//input[@value='login']");
+    private final By lblLoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
 
     // Elements
     public WebElement getTxtUsername() {
-        return Constant.WEBDRIVER.findElement(_txtUsername);
+        return Constant.WEBDRIVER.findElement(txtUsername);
     }
 
     public WebElement getTxtPassword() {
-        return Constant.WEBDRIVER.findElement(_txtPassword);
+        return Constant.WEBDRIVER.findElement(txtPassword);
     }
 
     public WebElement getBtnLogin() {
-        return Constant.WEBDRIVER.findElement(_btnLogin);
+        return Constant.WEBDRIVER.findElement(btnLogin);
     }
 
     protected WebElement getLblLoginErrorMsg() {
-        return Constant.WEBDRIVER.findElement(_lblLoginErrorMsg);
+        return Constant.WEBDRIVER.findElement(lblLoginErrorMsg);
     }
     
     public String getLoginErrorMsg() {

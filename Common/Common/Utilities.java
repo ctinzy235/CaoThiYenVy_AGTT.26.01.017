@@ -22,6 +22,7 @@ public class Utilities {
 	public static void scrollToElement(WebElement element) {
 	    JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
 	    js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
+	    try { Thread.sleep(300); } catch (InterruptedException ignored) {}
 	}
 	
 	public static void safeClick(By locator) {
@@ -32,7 +33,11 @@ public class Utilities {
 	    
 	    scrollToElement(element);
 	    
-	    element.click();
+	    try {
+	        element.click();
+	    } catch (Exception e) {
+	    	clickByJS(element);
+	    }
 	}
 	
 	public static void safeSendKeys(By locator, String text) {
@@ -58,16 +63,20 @@ public class Utilities {
 	   
 	}
 	
-	public static void switchToNewTab() {
+
+	public static void closeCurrentAndSwitchToLatestTab() {
 	    String currentWindow = Constant.WEBDRIVER.getWindowHandle();
+	    
 	    Set<String> allWindows = Constant.WEBDRIVER.getWindowHandles();
+	    
+	    Constant.WEBDRIVER.close();
 	    
 	    for (String window : allWindows) {
 	        if (!window.equals(currentWindow)) {
 	            Constant.WEBDRIVER.switchTo().window(window);
-	            break;
 	        }
 	    }
+	    
+	    System.out.println("Closed old tab and switched to: " + Constant.WEBDRIVER.getTitle());
 	}
-	
 }

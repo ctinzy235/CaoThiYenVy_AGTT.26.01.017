@@ -7,7 +7,8 @@ import DataObjects.User;
 import Common.Tab;
 import GuerrillaMail.GeneralPage;
 import Common.Random;
-import Common.Utilities;
+import Constant.MailType;
+
 
 public class CreatAccountTest extends TestBase{
 
@@ -84,7 +85,6 @@ public class CreatAccountTest extends TestBase{
 		System.out.println("Step 1. Navigate to QA Railway Website");
 		homePage.open();
 		
-		
 		System.out.println("Step 2. Click on \"Create an account\"");
 		homePage.gotoPage(Tab.REGISTER);
 		
@@ -97,10 +97,8 @@ public class CreatAccountTest extends TestBase{
 		System.out.println("Step 7. Open email with subject containing \"Please confirm your account\"  and the email of the new account at step 3");
 		System.out.println("Step 8. Click on the activate link");
 
-		GeneralPage.confirmMail(userName);
-		
-		Utilities.switchToNewTab();
-		
+		GeneralPage.confirmMail(userName,MailType.CONFIRM);
+				
 		String expectedRegisterMsg = ("Registration Confirmed! You can now log in to the site.");
 		String actualRegisterMsg = registerPage.getRegisterMsg();
 		

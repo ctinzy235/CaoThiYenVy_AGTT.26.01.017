@@ -14,6 +14,10 @@ public class User {
         this.password = password;
     }
     
+    public User(String email) {
+    	this.email = email;
+    }
+    
     public User(String email, String password, String confirmPassword, String pid) {
         this.email = email;
         this.password = password;

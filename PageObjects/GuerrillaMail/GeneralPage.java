@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import Common.Utilities;
 import Common.WaitUtils;
 import Constant.Constant; 
+import Constant.MailType;
 
 public class GeneralPage {
 
@@ -15,6 +16,7 @@ public class GeneralPage {
 	private static By chkScrambleAddress = By.xpath("//input[@id='use-alias']");
 	private static By lblEmailAddress = By.xpath("//span[@id='email-widget']");
 	private static By btnConfirmAcc = By.xpath("//td[contains(text(), 'Please confirm your account')]");
+	private static By btnResetPassword = By.xpath("//td[contains(text(), 'Please reset your password')]");
 	private static By linkConfirm = By.xpath("//div[@class=\"email_body\"]//a");
 
 	public static void navigateToWebMail() {
@@ -48,7 +50,7 @@ public class GeneralPage {
         return finalMail;
     }
 	
-	public static void confirmMail(String username) {
+	public static void confirmMail(String username, MailType type) {
 		navigateToWebMail();
 		
 		Utilities.safeClick(btnInboxID);
@@ -57,10 +59,19 @@ public class GeneralPage {
 		
         Utilities.safeClick(btnSet);
         
-        Utilities.safeClick(btnConfirmAcc);
+        switch (type) {
+        case RESETPASSWORD:
+            Utilities.safeClick(btnResetPassword);
+            break;
+        case CONFIRM:
+            Utilities.safeClick(btnConfirmAcc);
+            break;
+        }
         
         Utilities.safeClick(linkConfirm);
         
-
+        Utilities.closeCurrentAndSwitchToLatestTab();
 	}
+	
+	
 }

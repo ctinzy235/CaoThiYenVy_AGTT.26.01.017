@@ -34,5 +34,8 @@ public class GeneralPage {
         Utilities.safeClick(getTabLocator(tab));
     }
     
+//    public void gotoPage(By locator) {
+//    	Utilities.safeClick(locator);
+//    }
     
 }

@@ -7,8 +7,9 @@ public enum Tab {
     FAQ("FAQ"),
     TIMETABLE("Timetable"),
     CONTACT("Contact"),
-    TICKETPRICE("Ticket Price"),
-    BOOKTICKET("Book Ticket");
+    TICKETPRICE("Ticket price"),
+    MYTICKET("My ticket"),
+    BOOKTICKET("Book ticket");
 	
 	private String displayName;
 

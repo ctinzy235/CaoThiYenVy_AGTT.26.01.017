@@ -19,7 +19,7 @@ public class GeneralPage {
     }
         
     public String getWelcomeMessage() {
-        return Utilities.safeGetText(lblWelcomeMessage);
+        return Utilities.scrollToAndGetText(lblWelcomeMessage);
     }
     
     public boolean isTabLogoutDisplayed() {
@@ -31,11 +31,9 @@ public class GeneralPage {
     }
     
     public void gotoPage(Tab tab) {
-        Utilities.safeClick(getTabLocator(tab));
+        Utilities.srollToAndClick(getTabLocator(tab));
     }
     
-//    public void gotoPage(By locator) {
-//    	Utilities.safeClick(locator);
-//    }
+
     
 }

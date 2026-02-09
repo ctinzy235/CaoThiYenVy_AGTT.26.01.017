@@ -15,12 +15,11 @@ public class CreatAccountTest extends TestBase{
 	@Test
 	public void TC07() {
 		
-		User User = new User(Constant.USERNAME, Constant.PASSWORD, Constant.PASSWORD, "12345678");
+		String expectedErrorMsg = "This email address is already in use.";
+		User User = new User(Constant.USERNAME, Constant.PASSWORD, Constant.PASSWORD, Constant.PID);
 		
 		System.out.println("TC07 - User can't create account with an already in-use email");
-		
 		System.out.println("Pre-condition: an actived account is existing");
-		
 		System.out.println("Step 1. Navigate to QA Railway Website");
 		homePage.open();
 		
@@ -30,7 +29,6 @@ public class CreatAccountTest extends TestBase{
 		registerPage.register(User);
 		
 		String actualErrorMsg = registerPage.getRegisterErrorMsg();
-		String expectedErrorMsg = "This email address is already in use.";
 		
 		System.out.println("VP: Error message \"This email address is already in use.\" displays above the form.");
 		Assert.assertEquals(actualErrorMsg,expectedErrorMsg,"Error message for 'Email address already in use' is not displayed correctly!");
@@ -40,10 +38,12 @@ public class CreatAccountTest extends TestBase{
 	@Test
 	public void TC08() {
 		
+		String expectedErrorMsg1 = "There're errors in the form. Please correct the errors and try again.";
+		String expectedErrorMsg2 = "Invalid password length";
+		String expectedErrorMsg3 = "Invalid ID length";
 		User User = new User(Constant.USERNAME,"", "", "");
-				
+
 		System.out.println("TC08 - User can't create account while password and PID fields are empty");
-				
 		System.out.println("Step 1. Navigate to QA Railway Website");
 		homePage.open();
 		
@@ -54,13 +54,8 @@ public class CreatAccountTest extends TestBase{
 		registerPage.register(User);
 		
 		String actualErrorMsg1 = registerPage.getRegisterErrorMsg();
-		String expectedErrorMsg1 = "There're errors in the form. Please correct the errors and try again.";
-		
 		String actualErrorMsg2 = registerPage.getPasswordErrorMsg();
-		String expectedErrorMsg2 = "Invalid password length";
-		
 		String actualErrorMsg3 = registerPage.getPidErrorMsg();
-		String expectedErrorMsg3 = "Invalid ID length";
 		
 		System.out.println("VP: Message \"There're errors in the form. Please correct the errors and try again.\" appears above the form.");
 		Assert.assertEquals(actualErrorMsg1, expectedErrorMsg1, "General registration error message is not displayed correctly!");
@@ -76,12 +71,12 @@ public class CreatAccountTest extends TestBase{
 	@Test
 	public void TC09() {
 		
+		String expectedRegisterMsg = ("Registration Confirmed! You can now log in to the site.");
 		String userName = Random.getRandomString(8);
 		String fullMail = GeneralPage.creatMail(userName);
-		User userRegister = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD, "12345678");
+		User userRegister = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD, Constant.PID);
 		
 		System.out.println("TC09 - User create and activate account");
-
 		System.out.println("Step 1. Navigate to QA Railway Website");
 		homePage.open();
 		
@@ -99,7 +94,6 @@ public class CreatAccountTest extends TestBase{
 
 		GeneralPage.confirmMail(userName,MailType.CONFIRM);
 				
-		String expectedRegisterMsg = ("Registration Confirmed! You can now log in to the site.");
 		String actualRegisterMsg = registerPage.getRegisterMsg();
 		
 		System.out.println("VP: Redirect to Railways page and message \"Registration Confirmed! You can now log in to the site\" is shown");

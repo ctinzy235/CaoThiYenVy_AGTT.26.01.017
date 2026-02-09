@@ -10,19 +10,19 @@ import Common.Tab;
 import Constant.MailType;
 
 
-
-
 public class ResetPasswordTest extends TestBase{
 
 	@Test
 	public void TC10() {
-		System.out.println("TC10 - Reset password shows error if the new password is same as current");
-		System.out.println("Pre-condition: an actived account is existing");
 		
+		String expectedMsg = ("Password Change Form");
+		String expectedPasswordChangeMsg = ("The new password cannot be the same with the current password");
 		String userName = Random.getRandomString(8);
 		String fullMail = GeneralPage.creatMail(userName);
-		String pid = "12345678";
-		User userRegister = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD, pid);
+		User userRegister = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD, Constant.PID);
+		
+		System.out.println("TC10 - Reset password shows error if the new password is same as current");
+		System.out.println("Pre-condition: an actived account is existing");
 		
 		homePage.open();
 		homePage.gotoPage(Tab.REGISTER);
@@ -45,7 +45,6 @@ public class ResetPasswordTest extends TestBase{
 		
 		GeneralPage.confirmMail(userName,MailType.RESETPASSWORD);
 		
-		String expectedMsg = ("Password Change Form");
 		String actualMsg = loginPage.getPasswordChangeForm();
 
 		System.out.println("VP: Redirect to Railways page and Form \"Password Change Form\" is shown with the reset password token");
@@ -56,7 +55,6 @@ public class ResetPasswordTest extends TestBase{
 		
 		loginPage.resetPassword(Constant.PASSWORD, Constant.PASSWORD);
 		
-		String expectedPasswordChangeMsg = ("The new password cannot be the same with the current password");
 		String actualPasswordChangeMsg = loginPage.getPasswordChangeSuccessMsg();
 
 		System.out.println("VP: Message \"The new password cannot be the same with the current password\" is shown");
@@ -66,13 +64,16 @@ public class ResetPasswordTest extends TestBase{
 	
 	@Test
 	public void TC11() {
-		System.out.println("TC11 - Reset password shows error if the new password and confirm password doesn't match");
-		System.out.println("Pre-condition: an actived account is existing");
 		
+		String expectedMsg = ("Password Change Form");
+		String expectedPasswordChangeMsg = ("Could not reset password. Please correct the errors and try again.");
+		String expectedErrMsg = "The password confirmation did not match the new password.";
 		String userName = Random.getRandomString(8);
 		String fullMail = GeneralPage.creatMail(userName);
-		String pid = "12345678";
-		User userRegister = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD, pid);
+		User userRegister = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD, Constant.PID);
+		
+		System.out.println("TC11 - Reset password shows error if the new password and confirm password doesn't match");
+		System.out.println("Pre-condition: an actived account is existing");
 		
 		homePage.open();
 		homePage.gotoPage(Tab.REGISTER);
@@ -95,7 +96,6 @@ public class ResetPasswordTest extends TestBase{
 		
 		GeneralPage.confirmMail(userName,MailType.RESETPASSWORD);
 		
-		String expectedMsg = ("Password Change Form");
 		String actualMsg = loginPage.getPasswordChangeForm();
 
 		System.out.println("VP: Redirect to Railways page and Form \"Password Change Form\" is shown with the reset password token");
@@ -106,7 +106,6 @@ public class ResetPasswordTest extends TestBase{
 		
 		loginPage.resetPassword(Constant.PASSWORD,Constant.CONFIRMPASSWORD);
 		
-		String expectedPasswordChangeMsg = ("Could not reset password. Please correct the errors and try again.");
 		String actualPasswordChangeMsg = loginPage.getPasswordChangeErrorMsg();
 		
 		System.out.println("VP: Error message \"Could not reset password. Please correct the errors and try again.\" displays above the form.");
@@ -114,7 +113,6 @@ public class ResetPasswordTest extends TestBase{
 		
 		System.out.println("VP: Error message \"The password confirmation did not match the new password.\" displays next to the confirm password field.");
 		
-		String expectedErrMsg = "The password confirmation did not match the new password.";
 		String actualErrMsg = loginPage.getErrConfirmPasswordMsg();
 		Assert.assertEquals(expectedErrMsg, actualErrMsg, "The message does not match the expected message");
 		

@@ -25,7 +25,7 @@ public class Utilities {
 	    try { Thread.sleep(300); } catch (InterruptedException ignored) {}
 	}
 	
-	public static void safeClick(By locator) {
+	public static void srollToAndClick(By locator) {
 
 		WaitUtils.waitForClickable(locator);
 	    
@@ -40,7 +40,7 @@ public class Utilities {
 	    }
 	}
 	
-	public static void safeSendKeys(By locator, String text) {
+	public static void srollToAndSendKeys(By locator, String text) {
 	    WaitUtils.waitForVisible(locator);
 	    
 	    WebElement element = Constant.WEBDRIVER.findElement(locator);
@@ -52,7 +52,7 @@ public class Utilities {
 	    element.sendKeys(text);
 	}
 	
-	public static String safeGetText(By locator) {
+	public static String scrollToAndGetText(By locator) {
 	    WaitUtils.waitForVisible(locator);
 	    
 	    WebElement element = Constant.WEBDRIVER.findElement(locator);

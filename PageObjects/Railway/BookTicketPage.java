@@ -32,14 +32,14 @@ public class BookTicketPage extends GeneralPage{
 	}
 	
 	public String getTextTable(TicketTable ticketTable) {
-		return Utilities.safeGetText(getTableLocator(ticketTable));
+		return Utilities.scrollToAndGetText(getTableLocator(ticketTable));
 	}
 	public void waitForSomeeFooterDisplayed() {
 		WaitUtils.waitForVisible(lblSomee);
 	}
 	
 	public String getBookTicketMsg() {
-        return Utilities.safeGetText(lblBookTicketMsg);
+        return Utilities.scrollToAndGetText(lblBookTicketMsg);
     }
 	
 	public void selectOptionByText(TicketField ticket, String optionText) {
@@ -56,7 +56,7 @@ public class BookTicketPage extends GeneralPage{
 		selectOptionByText(TicketField.ARRIVE,bookTicket.getArrive());
 		selectOptionByText(TicketField.SEATTYPE, bookTicket.getSeatType());
 		selectOptionByText(TicketField.TICKETAMOUNT, bookTicket.getTicketAmount());
-		Utilities.safeClick(btnBookTicket);
+		Utilities.srollToAndClick(btnBookTicket);
 	}
 	
 	

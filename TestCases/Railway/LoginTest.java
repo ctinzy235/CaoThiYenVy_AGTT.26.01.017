@@ -14,9 +14,9 @@ public class LoginTest extends TestBase{
 	public void TC01() {
 		
 		User User = new User(Constant.USERNAME, Constant.PASSWORD);
+		String expectedMsg = "Welcome " + Constant.USERNAME;
 		
 		System.out.println("TC01 - User can log into Railway with valid username and password");
-		
 		System.out.println("Step 1. Navigate to QA Railway Website");
 		homePage.open();
 
@@ -25,9 +25,7 @@ public class LoginTest extends TestBase{
 
 		System.out.println("Step 3. Enter valid Email and Password.");
 		System.out.println("Step 4. Click on \"Login\" button.");
-
 		String actualMsg = loginPage.login(User).getWelcomeMessage();
-		String expectedMsg = "Welcome " + Constant.USERNAME;
 		
 		System.out.println("VP: User is logged into Railway. Welcome user message is displayed.");
 		Assert.assertEquals(actualMsg, expectedMsg, "Welcome message is not displayed as expected");
@@ -37,6 +35,7 @@ public class LoginTest extends TestBase{
 	public void TC02() {
 		
 		User User = new User("", Constant.PASSWORD);
+		String expectedErrorMsg = "There was a problem with your login and/or errors exist in your form.";
 
 		System.out.println("TC02 - User cannot login with blank \"Username\" textbox");
 		
@@ -52,8 +51,6 @@ public class LoginTest extends TestBase{
 		
 		String actualErrorMsg = loginPage.getLoginErrorMsg();
 		
-		String expectedErrorMsg = "There was a problem with your login and/or errors exist in your form.";
-		
 		System.out.println("VP: User can't login and message \"There was a problem with your login and/or errors exist in your form. \" appears.");
 		Assert.assertEquals(actualErrorMsg,expectedErrorMsg,"Error message for blank username is not displayed correctly!");
 		
@@ -63,6 +60,7 @@ public class LoginTest extends TestBase{
 	public void TC03() {
 		
 		User User = new User(Constant.USERNAME, Random.getRandomPassword());
+		String expectedErrorMsg = "There was a problem with your login and/or errors exist in your form.";
 		
 		System.out.println("TC03 - User cannot log into Railway with invalid password");
 		
@@ -78,7 +76,6 @@ public class LoginTest extends TestBase{
 		loginPage.login(User);
 		
 		String actualErrorMsg = loginPage.getLoginErrorMsg();	
-		String expectedErrorMsg = "There was a problem with your login and/or errors exist in your form.";
 
 		System.out.println("VP: Error message \"There was a problem with your login and/or errors exist in your form.\" is displayed");
 		Assert.assertEquals(actualErrorMsg,expectedErrorMsg,"Error message for invalid password is not displayed correctly!");
@@ -89,6 +86,9 @@ public class LoginTest extends TestBase{
 	public void TC04() {
 		
 		User User = new User(Constant.USERNAME, Random.getRandomPassword());
+		String expectedErrorMsg1 = "Invalid username or password. Please try again.";
+		String expectedErrorMsg4 = "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.";
+
 		
 		System.out.println("TC04 - System shows message when user enters wrong password many times");
 
@@ -105,7 +105,6 @@ public class LoginTest extends TestBase{
 		loginPage.login(User);
 		
 		String actualErrorMsg1 = loginPage.getLoginErrorMsg();	
-		String expectedErrorMsg1 = "Invalid username or password. Please try again.";
 		
 		System.out.println("VP: \"Invalid username or password. Please try again\" is shown");
 		Assert.assertEquals(actualErrorMsg1,expectedErrorMsg1,"Error message for invalid password is not displayed correctly!");
@@ -118,7 +117,6 @@ public class LoginTest extends TestBase{
 		}
 		
 		String actualErrorMsg4 = loginPage.getLoginErrorMsg();	
-		String expectedErrorMsg4 = "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.";
 		
 		System.out.println("VP: User can't login and message \"You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.\" appears.");
 		Assert.assertEquals(actualErrorMsg4,expectedErrorMsg4,"Error message for invalid password is not displayed correctly!");
@@ -130,7 +128,8 @@ public class LoginTest extends TestBase{
 		
 		String password = Random.getRandomPassword();
 		String email = Random.getRandomEmail();
-		
+		String expectedErrorMsg = "Invalid username or password. Please try again.";
+
 		User registerUser = new User(email, password, password,"12345678");
 		User loginUser = new User(email, password);
 		
@@ -150,7 +149,6 @@ public class LoginTest extends TestBase{
 		loginPage.login(loginUser);
 		
 		String actualErrorMsg = loginPage.getLoginErrorMsg();	
-		String expectedErrorMsg = "Invalid username or password. Please try again.";
 
 		System.out.println("VP: User can't login and message \"Invalid username or password. Please try again.\" appears.");
 		Assert.assertEquals(actualErrorMsg,expectedErrorMsg,"Error message for invalid password is not displayed correctly!");

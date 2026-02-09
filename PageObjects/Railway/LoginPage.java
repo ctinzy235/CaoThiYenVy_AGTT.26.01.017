@@ -24,47 +24,47 @@ public class LoginPage extends GeneralPage {
     // Elements
 
     public String getLoginErrorMsg() {
-        return Utilities.safeGetText(lblLoginErrorMsg);
+        return Utilities.scrollToAndGetText(lblLoginErrorMsg);
     }
 
     public String getPasswordChangeForm() {
-    	return Utilities.safeGetText(lblPasswordChangeForm);
+    	return Utilities.scrollToAndGetText(lblPasswordChangeForm);
     }
     
     public String getPasswordChangeSuccessMsg() {
-    	return Utilities.safeGetText(lblPasswordChangeSuccessMsg);
+    	return Utilities.scrollToAndGetText(lblPasswordChangeSuccessMsg);
     }
     
     public String getPasswordChangeErrorMsg() {
-    	return Utilities.safeGetText(lblPasswordChangeErrorMsg);
+    	return Utilities.scrollToAndGetText(lblPasswordChangeErrorMsg);
     }
     
     public String getErrConfirmPasswordMsg() {
-    	return Utilities.safeGetText(lblErrConfirmPasswordMsg);
+    	return Utilities.scrollToAndGetText(lblErrConfirmPasswordMsg);
     }
     
     
     // Methods
     public HomePage login(User user) {
-        Utilities.safeSendKeys(txtUsername, user.getEmail());
-        Utilities.safeSendKeys(txtPassword, user.getPassword());
-        Utilities.safeClick(btnLogin);
+        Utilities.srollToAndSendKeys(txtUsername, user.getEmail());
+        Utilities.srollToAndSendKeys(txtPassword, user.getPassword());
+        Utilities.srollToAndClick(btnLogin);
         return new HomePage();
     }
     
     public void gotoForgotPasswordPage() {
-    	Utilities.safeClick(linkForgotPassword);
+    	Utilities.srollToAndClick(linkForgotPassword);
     }
     
     public void enterMailAddressResetPassword(String email) {
-    	Utilities.safeSendKeys(txtEmailAddress, email);
-    	Utilities.safeClick(btnSendInstruction);
+    	Utilities.srollToAndSendKeys(txtEmailAddress, email);
+    	Utilities.srollToAndClick(btnSendInstruction);
     }
     
     public void resetPassword(String newPassword, String confirmPassword) {
-    	Utilities.safeSendKeys(txtNewPassword, newPassword);
-    	Utilities.safeSendKeys(txtConfirmPassword,confirmPassword);
-    	Utilities.safeClick(btnResetPassword);
+    	Utilities.srollToAndSendKeys(txtNewPassword, newPassword);
+    	Utilities.srollToAndSendKeys(txtConfirmPassword,confirmPassword);
+    	Utilities.srollToAndClick(btnResetPassword);
     	
     }
 }

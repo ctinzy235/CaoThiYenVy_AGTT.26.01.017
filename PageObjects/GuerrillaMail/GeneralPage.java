@@ -28,23 +28,23 @@ public class GeneralPage {
 
         navigateToWebMail();
 
-        Utilities.safeClick(btnInboxID);
+        Utilities.srollToAndClick(btnInboxID);
 
-        Utilities.safeSendKeys(txtInboxID, randomName);
+        Utilities.srollToAndSendKeys(txtInboxID, randomName);
 
-        Utilities.safeClick(btnSet);
+        Utilities.srollToAndClick(btnSet);
 
         WaitUtils.waitForVisible(chkScrambleAddress);
         WebElement checkbox = Constant.WEBDRIVER.findElement(chkScrambleAddress);
         
         if (checkbox.isSelected()) {
-            Utilities.safeClick(chkScrambleAddress);
+            Utilities.srollToAndClick(chkScrambleAddress);
             System.out.println("STATUS: CHECKBOX UNTICKED");
         } else {
             System.out.println("STATUS: CHECKBOX ALREADY UNTICKED");
         }
 
-        Utilities.safeClick(lblEmailAddress); 
+        Utilities.srollToAndClick(lblEmailAddress); 
         String finalMail = Constant.WEBDRIVER.findElement(lblEmailAddress).getText();
         
         return finalMail;
@@ -53,22 +53,22 @@ public class GeneralPage {
 	public static void confirmMail(String username, MailType type) {
 		navigateToWebMail();
 		
-		Utilities.safeClick(btnInboxID);
+		Utilities.srollToAndClick(btnInboxID);
 		
-		Utilities.safeSendKeys(txtInboxID, username);
+		Utilities.srollToAndSendKeys(txtInboxID, username);
 		
-        Utilities.safeClick(btnSet);
+        Utilities.srollToAndClick(btnSet);
         
         switch (type) {
         case RESETPASSWORD:
-            Utilities.safeClick(btnResetPassword);
+            Utilities.srollToAndClick(btnResetPassword);
             break;
         case CONFIRM:
-            Utilities.safeClick(btnConfirmAcc);
+            Utilities.srollToAndClick(btnConfirmAcc);
             break;
         }
         
-        Utilities.safeClick(linkConfirm);
+        Utilities.srollToAndClick(linkConfirm);
         
         Utilities.closeCurrentAndSwitchToLatestTab();
 	}

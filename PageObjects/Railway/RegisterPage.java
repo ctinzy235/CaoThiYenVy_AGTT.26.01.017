@@ -23,19 +23,19 @@ public class RegisterPage extends GeneralPage{
 	// Elements
 	
 	public String getPasswordErrorMsg() {
-	    return Utilities.safeGetText(lblPasswordErrorMsg);
+	    return Utilities.scrollToAndGetText(lblPasswordErrorMsg);
 	}
 
 	public String getPidErrorMsg() {
-	    return Utilities.safeGetText(lblPidErrorMsg);
+	    return Utilities.scrollToAndGetText(lblPidErrorMsg);
 	}
 
 	public String getRegisterErrorMsg() {
-	    return Utilities.safeGetText(lblRegisterErrorMsg);
+	    return Utilities.scrollToAndGetText(lblRegisterErrorMsg);
 	}
 	
 	public String getRegisterMsg() {
-	    return Utilities.safeGetText(lblRegisterMsg);
+	    return Utilities.scrollToAndGetText(lblRegisterMsg);
 	}
 	
 	protected By getFieldLocator(RegisterField register) {
@@ -46,11 +46,11 @@ public class RegisterPage extends GeneralPage{
 	// Methods
 	public void register(User user) {
 
-		Utilities.safeSendKeys(getFieldLocator(RegisterField.EMAIL),user.getEmail());
-		Utilities.safeSendKeys(getFieldLocator(RegisterField.PASSWORD),user.getPassword());
-		Utilities.safeSendKeys(getFieldLocator(RegisterField.CONFIRM_PASSWORD),user.getConfirmPassword());
-		Utilities.safeSendKeys(getFieldLocator(RegisterField.PID),user.getPid());
-		Utilities.safeClick(btnRegister);	
+		Utilities.srollToAndSendKeys(getFieldLocator(RegisterField.EMAIL),user.getEmail());
+		Utilities.srollToAndSendKeys(getFieldLocator(RegisterField.PASSWORD),user.getPassword());
+		Utilities.srollToAndSendKeys(getFieldLocator(RegisterField.CONFIRM_PASSWORD),user.getConfirmPassword());
+		Utilities.srollToAndSendKeys(getFieldLocator(RegisterField.PID),user.getPid());
+		Utilities.srollToAndClick(btnRegister);	
 		
 	}
 }

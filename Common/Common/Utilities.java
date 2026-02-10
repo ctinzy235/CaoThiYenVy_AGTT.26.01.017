@@ -43,6 +43,19 @@ public class Utilities {
 	    }
 	}
 	
+	public static void scrollToAndClick(WebElement element) {
+	    WaitUtils.waitForVisible(element); 
+	    
+	    scrollToElement(element);
+	    
+	    try {
+	        WaitUtils.waitForClickable(element);
+	        element.click();
+	    } catch (Exception e) {
+	        clickByJS(element);
+	    }
+	}
+	
 	public static void srollToAndSendKeys(By locator, String text) {
 	    WaitUtils.waitForVisible(locator);
 	    

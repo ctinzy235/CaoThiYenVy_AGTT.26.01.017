@@ -7,7 +7,6 @@ import Common.TicketTable;
 import Common.Utilities;
 import Common.DateUtils;
 
-import Common.WaitUtils;
 import Constant.Constant;
 import DataObjects.BookTicket;
 import org.openqa.selenium.WebElement;
@@ -20,7 +19,6 @@ public class BookTicketPage extends GeneralPage{
 	private String tableXpath = "//table[@class='MyTable WideTable']//tr[@class='OddRow'][1]/td[%s]";
 	private final By btnBookTicket = By.xpath("//input[@value='Book ticket']");
 	private final By lblBookTicketMsg = By.xpath("//div[@id='content']//h1");
-	private final By lblSomee = By.xpath("//span[@id='ArriveStation']//center//a");
 	
 	protected By getTicketLocator(TicketField ticket) {
         String xpath = String.format(ticketXpath, ticket.getId());
@@ -34,9 +32,6 @@ public class BookTicketPage extends GeneralPage{
 	
 	public String getTextTable(TicketTable ticketTable) {
 		return Utilities.scrollToAndGetText(getTableLocator(ticketTable));
-	}
-	public void waitForSomeeFooterDisplayed() {
-		WaitUtils.waitForVisible(lblSomee);
 	}
 	
 	public String getBookTicketMsg() {
@@ -54,6 +49,15 @@ public class BookTicketPage extends GeneralPage{
 	    WebElement dropdown = Constant.WEBDRIVER.findElement(getTicketLocator(TicketField.DEPARTDATE));
 	    Select select = new Select(dropdown);
 	    return select.getOptions().get(0).getText();
+	}
+	
+	public String getSelectedOption(TicketField field) {
+	    WebElement element = Constant.WEBDRIVER.findElement(getTicketLocator(field));
+	    
+	    Utilities.scrollToElement(element);
+	    
+	    Select select = new Select(element);
+	    return select.getFirstSelectedOption().getText().trim();
 	}
 	
 	private void fillTicketFormAndSubmit(BookTicket bookTicket) {

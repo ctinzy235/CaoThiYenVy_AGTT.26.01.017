@@ -12,6 +12,8 @@ public class TestBase {
     protected LoginPage loginPage;
     protected RegisterPage registerPage;
     protected BookTicketPage bookTicketPage;
+    protected TimeTablePage timeTablePage;
+    protected TicketPricePage ticketPricePage;
 
 	@BeforeMethod
     public void beforeMethod() {
@@ -25,6 +27,8 @@ public class TestBase {
         loginPage = new LoginPage();
         registerPage = new RegisterPage();
         bookTicketPage = new BookTicketPage();
+        timeTablePage = new TimeTablePage();
+        ticketPricePage = new TicketPricePage();
     }
 
 //	@AfterMethod

@@ -16,7 +16,7 @@ public class CreatAccountTest extends TestBase{
 	public void TC07() {
 		
 		String expectedErrorMsg = "This email address is already in use.";
-		User User = new User(Constant.USERNAME, Constant.PASSWORD, Constant.PASSWORD, Constant.PID);
+		User user = new User(Constant.USERNAME, Constant.PASSWORD, Constant.PASSWORD, Constant.PID);
 		
 		System.out.println("TC07 - User can't create account with an already in-use email");
 		System.out.println("Pre-condition: an actived account is existing");
@@ -26,7 +26,7 @@ public class CreatAccountTest extends TestBase{
 		System.out.println("Step 2. Click on \"Register\" tab");
 		homePage.gotoPage(Tab.REGISTER);
 		
-		registerPage.register(User);
+		registerPage.register(user);
 		
 		String actualErrorMsg = registerPage.getRegisterErrorMsg();
 		
@@ -41,7 +41,7 @@ public class CreatAccountTest extends TestBase{
 		String expectedErrorMsg1 = "There're errors in the form. Please correct the errors and try again.";
 		String expectedErrorMsg2 = "Invalid password length";
 		String expectedErrorMsg3 = "Invalid ID length";
-		User User = new User(Constant.USERNAME,"", "", "");
+		User user = new User(Constant.USERNAME,"", "", "");
 
 		System.out.println("TC08 - User can't create account while password and PID fields are empty");
 		System.out.println("Step 1. Navigate to QA Railway Website");
@@ -51,7 +51,7 @@ public class CreatAccountTest extends TestBase{
 		homePage.gotoPage(Tab.REGISTER);
 		
 		System.out.println("Step 3. Enter valid email address and leave other fields empty");
-		registerPage.register(User);
+		registerPage.register(user);
 		
 		String actualErrorMsg1 = registerPage.getRegisterErrorMsg();
 		String actualErrorMsg2 = registerPage.getPasswordErrorMsg();

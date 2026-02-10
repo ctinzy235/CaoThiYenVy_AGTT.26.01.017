@@ -12,7 +12,7 @@ public class LogoutTest extends TestBase{
 	@Test
 	public void TC06() {
 		
-		User User = new User(Constant.USERNAME, Constant.PASSWORD);
+		User user = new User(Constant.USERNAME, Constant.PASSWORD);
 
 		System.out.println("TC06 - User is redirected to Home page after logging out");
 		
@@ -22,7 +22,7 @@ public class LogoutTest extends TestBase{
 		System.out.println("Step 2. Login with valid Email and Password");
 		
 		homePage.gotoPage(Tab.LOGIN); 
-		loginPage.login(User);
+		loginPage.login(user);
 		
 		homePage.gotoPage(Tab.FAQ);
 		

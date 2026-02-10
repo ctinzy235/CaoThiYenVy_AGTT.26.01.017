@@ -25,15 +25,15 @@ public class TicketPricePage extends GeneralPage{
 	}
 	
 	public Map<String, String> getPriceTableData() {
-	    Map<String, String> dataMap = new HashMap<>();
+	    Map<String, String> priceData = new HashMap<>();
 	    
 	    List<WebElement> headers = Constant.WEBDRIVER.findElements(By.xpath("//tr[th[contains(text(),'Seat type')]]//td"));
 	    List<WebElement> values = Constant.WEBDRIVER.findElements(By.xpath("//tr[th[contains(text(),'Price (VND)')]]//td"));
 
 	    for (int i = 0; i < headers.size(); i++) {
-	        dataMap.put(headers.get(i).getText().trim(), values.get(i).getText().trim());
+	    	priceData.put(headers.get(i).getText().trim(), values.get(i).getText().trim());
 	    }
-	    return dataMap;
+	    return priceData;
 	}
 	
 }

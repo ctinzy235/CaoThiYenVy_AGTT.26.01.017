@@ -31,10 +31,10 @@ public class TestBase {
         ticketPricePage = new TicketPricePage();
     }
 
-//	@AfterMethod
-//	public void afterMethod() {
-//		System.out.println("Post-condition");
-//
-//		Constant.WEBDRIVER.quit();
-//	}
+	@AfterMethod
+	public void afterMethod() {
+		System.out.println("Post-condition");
+
+		Constant.WEBDRIVER.quit();
+	}
 }

@@ -3,7 +3,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
 import Common.TicketField;
-import Common.TicketTable;
 import Common.Utilities;
 import Common.DateUtils;
 
@@ -16,7 +15,6 @@ import org.openqa.selenium.WebElement;
 public class BookTicketPage extends GeneralPage{
 	
 	private String ticketXpath = "//select[@name='%s']";
-	private String tableXpath = "//table[@class='MyTable WideTable']//tr[@class='OddRow'][1]/td[%s]";
 	private final By btnBookTicket = By.xpath("//input[@value='Book ticket']");
 	private final By lblBookTicketMsg = By.xpath("//div[@id='content']//h1");
 	
@@ -24,15 +22,6 @@ public class BookTicketPage extends GeneralPage{
         String xpath = String.format(ticketXpath, ticket.getId());
         return By.xpath(xpath);
     }
-	
-	protected By getTableLocator(TicketTable ticketTable) {
-		String xpath = String.format(tableXpath,ticketTable.getId());
-		return By.xpath(xpath);
-	}
-	
-	public String getTextTable(TicketTable ticketTable) {
-		return Utilities.scrollToAndGetText(getTableLocator(ticketTable));
-	}
 	
 	public String getBookTicketMsg() {
         return Utilities.scrollToAndGetText(lblBookTicketMsg);

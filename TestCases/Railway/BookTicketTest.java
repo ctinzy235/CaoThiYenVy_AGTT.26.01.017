@@ -7,14 +7,15 @@ import Common.Tab;
 import Constant.Constant;
 import DataObjects.User;
 import DataObjects.BookTicket;
-import Common.TicketTable;
-//import Common.Utilities;
+import Common.TicketColumn;
 import Constant.MailType;
 import GuerrillaMail.GeneralPage;
 import Common.Random;
 import Common.TicketAction;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Arrays;
 import Common.TicketField;
 import Common.DateUtils;
 
@@ -26,16 +27,16 @@ public class BookTicketTest extends TestBase{
 
 		String userName = Random.getRandomString(8);
 	    String fullMail = GeneralPage.creatMail(userName);
-	    User User = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD,  Constant.PID);
+	    User user = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD,  Constant.PID);
 
 	    homePage.open();
 	    homePage.gotoPage(Tab.REGISTER);
-	    registerPage.register(User);
+	    registerPage.register(user);
 	    GeneralPage.confirmMail(userName, MailType.CONFIRM);
 	    
 		String expectedMsg = ("Ticket booked successfully!");
 
-		BookTicket BookTicket = new BookTicket("","Nha Trang","Huế","Soft bed with air conditioner","1");
+		BookTicket bookTicket = new BookTicket("","Nha Trang","Huế","Soft bed with air conditioner","1");
 		
 		System.out.println("TC12 - User can book 1 ticket at a time");
 		System.out.println("Pre-condition: an actived account is existing");
@@ -45,7 +46,7 @@ public class BookTicketTest extends TestBase{
 		
 		System.out.println("2. Login with a valid account");
 		homePage.gotoPage(Tab.LOGIN);
-		loginPage.login(User);
+		loginPage.login(user);
 		
 		System.out.println("3. Click on \"Book ticket\" tab");
 		homePage.gotoPage(Tab.BOOKTICKET);
@@ -55,7 +56,7 @@ public class BookTicketTest extends TestBase{
 		System.out.println("6. Select \"Soft bed with air conditioner\" for \"Seat type\"");
 		System.out.println("7. Select \"1\" for \"Ticket amount\"");
 		System.out.println("8. Click on \"Book ticket\" button");
-		bookTicketPage.bookTicket(BookTicket,2);
+		bookTicketPage.bookTicket(bookTicket,2);
 
 		String actualMsg = bookTicketPage.getBookTicketMsg();
 
@@ -64,11 +65,23 @@ public class BookTicketTest extends TestBase{
 		
 		System.out.println("VP:  Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)");
 		
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.DEPARTDATE),BookTicket.getDepartDate(),"Depart Date invalid");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.DEPARTFROM),BookTicket.getDepartFrom(),"Depart From invalid");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.ARRIVE),BookTicket.getArrive(),"Arrive invalid");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.SEATTYPE),BookTicket.getSeatType(),"Seat Type invalid");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.TICKETAMOUNT),BookTicket.getTicketAmount(),"Ticket Amount invalid");
+		Map<String, String> expectedData = new HashMap<String, String>() {{
+		    put(TicketColumn.DEPART_DATE.getValue(), bookTicket.getDepartDate());
+		    put(TicketColumn.DEPART_STATION.getValue(), bookTicket.getDepartFrom());
+		    put(TicketColumn.ARRIVE_STATION.getValue(), bookTicket.getArrive());
+		    put(TicketColumn.SEAT_TYPE.getValue(), bookTicket.getSeatType());
+		    put(TicketColumn.AMOUNT.getValue(), bookTicket.getTicketAmount());
+		}};
+		
+		List<String> columns = Arrays.asList(
+				TicketColumn.DEPART_DATE.getValue(), 
+				TicketColumn.DEPART_STATION.getValue(), 
+				TicketColumn.ARRIVE_STATION.getValue(),
+				TicketColumn.SEAT_TYPE.getValue(),
+				TicketColumn.AMOUNT.getValue());
+		Map<String, String> actualData = timeTablePage.getActualTicketData(columns);
+		
+		Assert.assertEquals(expectedData, actualData,"Ticket data not match the expected values");
 		
 	}
 	
@@ -77,16 +90,16 @@ public class BookTicketTest extends TestBase{
 
 		String userName = Random.getRandomString(8);
 	    String fullMail = GeneralPage.creatMail(userName);
-	    User User = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD,  Constant.PID);
+	    User user = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD,  Constant.PID);
 
 	    homePage.open();
 	    homePage.gotoPage(Tab.REGISTER);
-	    registerPage.register(User);
+	    registerPage.register(user);
 	    GeneralPage.confirmMail(userName, MailType.CONFIRM);
 	    
 		String expectedMsg = ("Ticket booked successfully!");
 
-		BookTicket BookTicket = new BookTicket("","Nha Trang","Sài Gòn","Soft bed with air conditioner","5");
+		BookTicket bookTicket = new BookTicket("","Nha Trang","Sài Gòn","Soft bed with air conditioner","5");
 		
 		System.out.println("TC13 - User can book many tickets at a time");
 		System.out.println("Pre-condition: an actived account is existing");
@@ -96,7 +109,7 @@ public class BookTicketTest extends TestBase{
 		
 		System.out.println("2. Login with a valid account");
 		homePage.gotoPage(Tab.LOGIN);
-		loginPage.login(User);
+		loginPage.login(user);
 		
 		System.out.println("3. Click on \"Book ticket\" tab");
 		homePage.gotoPage(Tab.BOOKTICKET);
@@ -106,7 +119,7 @@ public class BookTicketTest extends TestBase{
 		System.out.println("6. Select \"Soft bed with air conditioner\" for \"Seat type\"");
 		System.out.println("7. Select \"5\" for \"Ticket amount\"");
 		System.out.println("8. Click on \"Book ticket\" button");
-		bookTicketPage.bookTicket(BookTicket,25);
+		bookTicketPage.bookTicket(bookTicket,25);
 
 		String actualMsg = bookTicketPage.getBookTicketMsg();
 
@@ -115,12 +128,23 @@ public class BookTicketTest extends TestBase{
 		
 		System.out.println("VP: Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)");
 		
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.DEPARTDATE),BookTicket.getDepartDate(),"Depart Date invalid");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.DEPARTFROM),BookTicket.getDepartFrom(),"Depart From invalid");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.ARRIVE),BookTicket.getArrive(),"Arrive invalid");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.SEATTYPE),BookTicket.getSeatType(),"Seat Type invalid");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.TICKETAMOUNT),BookTicket.getTicketAmount(),"Ticket Amount invalid");
+		Map<String, String> expectedData = new HashMap<String, String>() {{
+		    put(TicketColumn.DEPART_DATE.getValue(), bookTicket.getDepartDate());
+		    put(TicketColumn.DEPART_STATION.getValue(), bookTicket.getDepartFrom());
+		    put(TicketColumn.ARRIVE_STATION.getValue(), bookTicket.getArrive());
+		    put(TicketColumn.SEAT_TYPE.getValue(), bookTicket.getSeatType());
+		    put(TicketColumn.AMOUNT.getValue(), bookTicket.getTicketAmount());
+		}};
 		
+		List<String> columns = Arrays.asList(
+				TicketColumn.DEPART_DATE.getValue(), 
+				TicketColumn.DEPART_STATION.getValue(), 
+				TicketColumn.ARRIVE_STATION.getValue(),
+				TicketColumn.SEAT_TYPE.getValue(),
+				TicketColumn.AMOUNT.getValue());
+		Map<String, String> actualData = timeTablePage.getActualTicketData(columns);
+		
+		Assert.assertEquals(expectedData, actualData,"Ticket data not match the expected values");
 	}
 	
 	@Test
@@ -139,11 +163,11 @@ public class BookTicketTest extends TestBase{
 		
 		String userName = Random.getRandomString(8);
 	    String fullMail = GeneralPage.creatMail(userName);
-	    User User = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD,  Constant.PID);
+	    User user = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD,  Constant.PID);
 
 	    homePage.open();
 	    homePage.gotoPage(Tab.REGISTER);
-	    registerPage.register(User);
+	    registerPage.register(user);
 	    GeneralPage.confirmMail(userName, MailType.CONFIRM);
 	    
 	    System.out.println("TC14 - User can check price of ticket from Timetable");
@@ -153,7 +177,7 @@ public class BookTicketTest extends TestBase{
 		
 		System.out.println("2. Login with a valid account");
 		homePage.gotoPage(Tab.LOGIN);
-		loginPage.login(User);
+		loginPage.login(user);
 		
 		System.out.println("3. Click on \"Timetable\" tab");
 		homePage.gotoPage(Tab.TIMETABLE);
@@ -185,13 +209,13 @@ public class BookTicketTest extends TestBase{
 		String userName = Random.getRandomString(8);
 	    String fullMail = GeneralPage.creatMail(userName);
 	    String expectedMsg = ("Ticket booked successfully!");
-	    User User = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD,  Constant.PID);
+	    User user = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD,  Constant.PID);
 
 	    homePage.open();
 	    homePage.gotoPage(Tab.REGISTER);
-	    registerPage.register(User);
+	    registerPage.register(user);
 	    GeneralPage.confirmMail(userName, MailType.CONFIRM);
-		BookTicket BookTicket = new BookTicket(tomorrow, "Quảng Ngãi", "Huế", "Soft bed with air conditioner", "5");
+		BookTicket bookTicket = new BookTicket(tomorrow, "Quảng Ngãi", "Huế", "Soft bed with air conditioner", "5");
 
 	    System.out.println("TC15 - User can book ticket from Timetable");
 		System.out.println("Pre-condition: an actived account is existing");
@@ -200,7 +224,7 @@ public class BookTicketTest extends TestBase{
 		
 		System.out.println("2. Login with a valid account");
 		homePage.gotoPage(Tab.LOGIN);
-		loginPage.login(User);
+		loginPage.login(user);
 		
 		System.out.println("3. Click on \"Timetable\" tab");
 		homePage.gotoPage(Tab.TIMETABLE);
@@ -219,18 +243,68 @@ public class BookTicketTest extends TestBase{
 		System.out.println("6. Select Ticket amount = 5");
 		System.out.println("7. Click on \"Book ticket\" button");
 		
-		bookTicketPage.bookTicket(BookTicket);
+		bookTicketPage.bookTicket(bookTicket);
 		
 		System.out.println("VP: Message \"Ticket booked successfully!\" displays.");
 		String actualMsg = bookTicketPage.getBookTicketMsg();
 		Assert.assertEquals(expectedMsg, actualMsg, "The message does not match the expected message");
 		
 		System.out.println("VP: Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.DEPARTDATE),BookTicket.getDepartDate(),"Depart Date invalid");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.DEPARTFROM),BookTicket.getDepartFrom(),"Depart From invalid");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.ARRIVE),BookTicket.getArrive(),"Arrive invalid");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.SEATTYPE),BookTicket.getSeatType(),"Seat Type invalid");
-		Assert.assertEquals(bookTicketPage.getTextTable(TicketTable.TICKETAMOUNT),BookTicket.getTicketAmount(),"Ticket Amount invalid");
+
+		Map<String, String> expectedData = new HashMap<String, String>() {{
+		    put(TicketColumn.DEPART_DATE.getValue(), bookTicket.getDepartDate());
+		    put(TicketColumn.DEPART_STATION.getValue(), bookTicket.getDepartFrom());
+		    put(TicketColumn.ARRIVE_STATION.getValue(), bookTicket.getArrive());
+		    put(TicketColumn.SEAT_TYPE.getValue(), bookTicket.getSeatType());
+		    put(TicketColumn.AMOUNT.getValue(), bookTicket.getTicketAmount());
+		}};
+		
+		List<String> columns = Arrays.asList(
+				TicketColumn.DEPART_DATE.getValue(), 
+				TicketColumn.DEPART_STATION.getValue(), 
+				TicketColumn.ARRIVE_STATION.getValue(),
+				TicketColumn.SEAT_TYPE.getValue(),
+				TicketColumn.AMOUNT.getValue());
+		Map<String, String> actualData = timeTablePage.getActualTicketData(columns);
+		
+		Assert.assertEquals(expectedData, actualData,"Ticket data not match the expected values");
+	}
+	
+	@Test
+	public void TC16() {
+		
+		String userName = Random.getRandomString(8);
+	    String fullMail = GeneralPage.creatMail(userName);
+	    User user = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD,  Constant.PID);
+
+	    homePage.open();
+	    homePage.gotoPage(Tab.REGISTER);
+	    registerPage.register(user);
+	    GeneralPage.confirmMail(userName, MailType.CONFIRM);
+	    
+		BookTicket bookTicket = new BookTicket("","Nha Trang","Huế","Soft bed with air conditioner","1");
+		
+		System.out.println("TC16 - User can cancel a ticket");
+		System.out.println("Pre-condition: an actived account is existing");
+		
+		System.out.println("1. Navigate to QA Railway Website");
+		homePage.open();
+		
+		System.out.println("2. Login with a valid account");
+		homePage.gotoPage(Tab.LOGIN);
+		loginPage.login(user);
+		
+		System.out.println("3. Book a ticket");
+		homePage.gotoPage(Tab.BOOKTICKET);
+		bookTicketPage.bookTicket(bookTicket,2);
+
+		System.out.println("4. Click on \"My ticket\" tab");
+		homePage.gotoPage(Tab.MYTICKET);
+		
+		System.out.println("5. Click on \"Cancel\" button of ticket which user want to cancel.");
+
+		
+
 	}
 	
 }

@@ -48,23 +48,23 @@ public class LoginPage extends GeneralPage {
     public HomePage login(User user) {
         Utilities.srollToAndSendKeys(txtUsername, user.getEmail());
         Utilities.srollToAndSendKeys(txtPassword, user.getPassword());
-        Utilities.srollToAndClick(btnLogin);
+        Utilities.scrollToAndClick(btnLogin);
         return new HomePage();
     }
     
     public void gotoForgotPasswordPage() {
-    	Utilities.srollToAndClick(linkForgotPassword);
+    	Utilities.scrollToAndClick(linkForgotPassword);
     }
     
     public void enterMailAddressResetPassword(String email) {
     	Utilities.srollToAndSendKeys(txtEmailAddress, email);
-    	Utilities.srollToAndClick(btnSendInstruction);
+    	Utilities.scrollToAndClick(btnSendInstruction);
     }
     
     public void resetPassword(String newPassword, String confirmPassword) {
     	Utilities.srollToAndSendKeys(txtNewPassword, newPassword);
     	Utilities.srollToAndSendKeys(txtConfirmPassword,confirmPassword);
-    	Utilities.srollToAndClick(btnResetPassword);
+    	Utilities.scrollToAndClick(btnResetPassword);
     	
     }
 }

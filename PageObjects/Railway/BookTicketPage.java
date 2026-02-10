@@ -4,12 +4,13 @@ import org.openqa.selenium.support.ui.Select;
 
 import Common.TicketField;
 import Common.TicketTable;
-
 import Common.Utilities;
-import Common.WaitUtils;
+import Common.DateUtils;
 
+import Common.WaitUtils;
 import Constant.Constant;
 import DataObjects.BookTicket;
+import org.openqa.selenium.WebElement;
 
 
 
@@ -49,14 +50,37 @@ public class BookTicketPage extends GeneralPage{
 	    select.selectByVisibleText(optionText);
 	}
 	
+	public String getFirstAvailableDepartDate() {
+	    WebElement dropdown = Constant.WEBDRIVER.findElement(getTicketLocator(TicketField.DEPARTDATE));
+	    Select select = new Select(dropdown);
+	    return select.getOptions().get(0).getText();
+	}
+	
+	private void fillTicketFormAndSubmit(BookTicket bookTicket) {
+	    WebElement arriveStationDropdown = Constant.WEBDRIVER.findElement(getTicketLocator(TicketField.ARRIVE));
+	    
+	    selectOptionByText(TicketField.DEPARTDATE, bookTicket.getDepartDate());
+	    selectOptionByText(TicketField.DEPARTFROM, bookTicket.getDepartFrom());
+	    
+	    Utilities.waitUntilStale(arriveStationDropdown);
+	    
+	    selectOptionByText(TicketField.ARRIVE, bookTicket.getArrive());
+	    selectOptionByText(TicketField.SEATTYPE, bookTicket.getSeatType());
+	    selectOptionByText(TicketField.TICKETAMOUNT, bookTicket.getTicketAmount());
+	    
+	    Utilities.scrollToAndClick(btnBookTicket); 
+	}
+	
+	public void bookTicket(BookTicket bookTicket, int addDaysFromWeb) {
+	    String currentWebDate = getFirstAvailableDepartDate();
+	    String departDate = DateUtils.addDaysToDate(currentWebDate, addDaysFromWeb, "M/d/yyyy");
+	    bookTicket.setDepartDate(departDate);
+	    fillTicketFormAndSubmit(bookTicket);
+	    
+	}
+	
 	public void bookTicket(BookTicket bookTicket) {
-		selectOptionByText(TicketField.DEPARTDATE, bookTicket.getDepartDate());
-		selectOptionByText(TicketField.DEPARTFROM, bookTicket.getDepartFrom());
-		waitForSomeeFooterDisplayed();
-		selectOptionByText(TicketField.ARRIVE,bookTicket.getArrive());
-		selectOptionByText(TicketField.SEATTYPE, bookTicket.getSeatType());
-		selectOptionByText(TicketField.TICKETAMOUNT, bookTicket.getTicketAmount());
-		Utilities.srollToAndClick(btnBookTicket);
+		fillTicketFormAndSubmit(bookTicket);
 	}
 	
 	

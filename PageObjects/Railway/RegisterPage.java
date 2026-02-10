@@ -50,7 +50,7 @@ public class RegisterPage extends GeneralPage{
 		Utilities.srollToAndSendKeys(getFieldLocator(RegisterField.PASSWORD),user.getPassword());
 		Utilities.srollToAndSendKeys(getFieldLocator(RegisterField.CONFIRM_PASSWORD),user.getConfirmPassword());
 		Utilities.srollToAndSendKeys(getFieldLocator(RegisterField.PID),user.getPid());
-		Utilities.srollToAndClick(btnRegister);	
+		Utilities.scrollToAndClick(btnRegister);	
 		
 	}
 }

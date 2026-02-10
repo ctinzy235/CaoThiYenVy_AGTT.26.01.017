@@ -27,10 +27,10 @@ public class TestBase {
         bookTicketPage = new BookTicketPage();
     }
 
-	@AfterMethod
-	public void afterMethod() {
-		System.out.println("Post-condition");
-
-		Constant.WEBDRIVER.quit();
-	}
+//	@AfterMethod
+//	public void afterMethod() {
+//		System.out.println("Post-condition");
+//
+//		Constant.WEBDRIVER.quit();
+//	}
 }

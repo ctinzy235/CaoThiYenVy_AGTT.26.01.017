@@ -31,7 +31,7 @@ public class GeneralPage {
     }
     
     public void gotoPage(Tab tab) {
-        Utilities.srollToAndClick(getTabLocator(tab));
+        Utilities.scrollToAndClick(getTabLocator(tab));
     }
     
 

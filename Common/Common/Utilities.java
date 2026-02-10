@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 import Constant.Constant;
 import org.openqa.selenium.By;
 import java.util.Set;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
 
 public class Utilities {
@@ -25,7 +28,7 @@ public class Utilities {
 	    try { Thread.sleep(300); } catch (InterruptedException ignored) {}
 	}
 	
-	public static void srollToAndClick(By locator) {
+	public static void scrollToAndClick(By locator) {
 
 		WaitUtils.waitForClickable(locator);
 	    
@@ -79,4 +82,14 @@ public class Utilities {
 	    
 	    System.out.println("Closed old tab and switched to: " + Constant.WEBDRIVER.getTitle());
 	}
+	
+	public static void waitUntilStale(WebElement element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT));
+			wait.until(ExpectedConditions.stalenessOf(element));
+		} catch (Exception e) {
+
+		}
+	}
+	
 }

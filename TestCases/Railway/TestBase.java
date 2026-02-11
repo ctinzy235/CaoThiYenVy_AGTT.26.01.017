@@ -1,36 +1,40 @@
 package Railway;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Optional;
 
 import Constant.Constant;
 
 public class TestBase {
 	
-	protected HomePage homePage;
-    protected LoginPage loginPage;
-    protected RegisterPage registerPage;
-    protected BookTicketPage bookTicketPage;
-    protected TimeTablePage timeTablePage;
-    protected TicketPricePage ticketPricePage;
-    protected MyTicketPage myTicketPage;
+	protected HomePage homePage = new HomePage();
+    protected LoginPage loginPage = new LoginPage();
+    protected RegisterPage registerPage = new RegisterPage();
+    protected BookTicketPage bookTicketPage = new BookTicketPage();
+    protected TimeTablePage timeTablePage = new TimeTablePage();
+    protected TicketPricePage ticketPricePage  = new TicketPricePage();
+    protected MyTicketPage myTicketPage = new MyTicketPage();
 
+    @Parameters("browser")
 	@BeforeMethod
-    public void beforeMethod() {
-        System.out.println("Pre-condition");
+    public void beforeMethod(@Optional("chrome") String browser) {
+        System.out.println("Pre-condition - Browser:" + browser);
 
-        Constant.WEBDRIVER = new ChromeDriver();
+        if ("chrome".equalsIgnoreCase(browser)) {
+        	Constant.WEBDRIVER = new ChromeDriver();
+       }
+        else if ("firefox".equalsIgnoreCase(browser)) {
+        	Constant.WEBDRIVER = new FirefoxDriver();
+       }
+        else {
+        throw new RuntimeException("Unsupported browser: " + browser);
+       }
 
         Constant.WEBDRIVER.manage().window().maximize();
-        
-        homePage = new HomePage();
-        loginPage = new LoginPage();
-        registerPage = new RegisterPage();
-        bookTicketPage = new BookTicketPage();
-        timeTablePage = new TimeTablePage();
-        ticketPricePage = new TicketPricePage();
-        myTicketPage = new MyTicketPage();
     }
 
 	@AfterMethod

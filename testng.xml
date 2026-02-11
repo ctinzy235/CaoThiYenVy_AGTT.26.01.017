@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Railway Suite" verbose="1">
+
+	<test name="Run on Firefox">
+		<parameter name="browser" value="firefox" />
+		<packages>
+			<package name="Railway" />
+		</packages>
+	</test>
+</suite>

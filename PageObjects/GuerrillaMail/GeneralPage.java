@@ -61,9 +61,11 @@ public class GeneralPage {
         
         switch (type) {
         case RESETPASSWORD:
+        	WaitUtils.waitForClickable(btnResetPassword);
             Utilities.scrollToAndClick(btnResetPassword);
             break;
         case CONFIRM:
+        	WaitUtils.waitForClickable(btnConfirmAcc);
             Utilities.scrollToAndClick(btnConfirmAcc);
             break;
         }

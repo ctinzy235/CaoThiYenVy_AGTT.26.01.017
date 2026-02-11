@@ -42,7 +42,12 @@ public class BookTicketPage extends GeneralPage{
 	}
 	
 	public String getSelectedOption(TicketField field) {
-	    WebElement element = Constant.WEBDRIVER.findElement(getTicketLocator(field));
+		
+		By locator = getTicketLocator(field);
+		
+		WaitUtils.waitForVisible(locator);
+		
+	    WebElement element = Constant.WEBDRIVER.findElement(locator);
 	    
 	    Utilities.scrollToElement(element);
 	    

@@ -28,6 +28,7 @@ public class TimeTablePage extends GeneralPage {
 	    Utilities.scrollToAndClick(btnLink);
 	}
 	
+	
 	public Map<String, String> getActualTicketData(List<String> columnsToGet) {
 	    Map<String, String> actualData = new HashMap<>();
 

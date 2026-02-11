@@ -14,6 +14,7 @@ public class TestBase {
     protected BookTicketPage bookTicketPage;
     protected TimeTablePage timeTablePage;
     protected TicketPricePage ticketPricePage;
+    protected MyTicketPage myTicketPage;
 
 	@BeforeMethod
     public void beforeMethod() {
@@ -29,6 +30,7 @@ public class TestBase {
         bookTicketPage = new BookTicketPage();
         timeTablePage = new TimeTablePage();
         ticketPricePage = new TicketPricePage();
+        myTicketPage = new MyTicketPage();
     }
 
 	@AfterMethod

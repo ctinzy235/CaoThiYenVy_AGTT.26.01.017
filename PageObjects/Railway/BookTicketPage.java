@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.Select;
 import Common.TicketField;
 import Common.Utilities;
 import Common.DateUtils;
+import Common.WaitUtils;
 
 import Constant.Constant;
 import DataObjects.BookTicket;
@@ -55,7 +56,7 @@ public class BookTicketPage extends GeneralPage{
 	    selectOptionByText(TicketField.DEPARTDATE, bookTicket.getDepartDate());
 	    selectOptionByText(TicketField.DEPARTFROM, bookTicket.getDepartFrom());
 	    
-	    Utilities.waitUntilStale(arriveStationDropdown);
+	    WaitUtils.waitUntilStale(arriveStationDropdown);
 	    
 	    selectOptionByText(TicketField.ARRIVE, bookTicket.getArrive());
 	    selectOptionByText(TicketField.SEATTYPE, bookTicket.getSeatType());

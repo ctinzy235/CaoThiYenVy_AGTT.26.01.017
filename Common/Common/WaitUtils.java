@@ -39,5 +39,14 @@ public class WaitUtils {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return locator;
     }
+    
+    public static void waitUntilStale(WebElement element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT));
+			wait.until(ExpectedConditions.stalenessOf(element));
+		} catch (Exception e) {
+
+		}
+	}
 
 }

@@ -96,13 +96,16 @@ public class Utilities {
 	    System.out.println("Closed old tab and switched to: " + Constant.WEBDRIVER.getTitle());
 	}
 	
-	public static void waitUntilStale(WebElement element) {
-		try {
-			WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT));
-			wait.until(ExpectedConditions.stalenessOf(element));
-		} catch (Exception e) {
-
-		}
+	
+	
+	public static void acceptAlert() {
+	    try {
+	    	WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT));
+	    	wait.until(ExpectedConditions.alertIsPresent());
+	        Constant.WEBDRIVER.switchTo().alert().accept();
+	    } catch (Exception e) {
+	        System.out.println("No alert present to accept.");
+	    }
 	}
 	
 }

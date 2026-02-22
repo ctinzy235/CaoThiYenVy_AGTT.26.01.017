@@ -3,11 +3,8 @@ package Railway;
 import org.openqa.selenium.By;
 import Common.Utilities;
 import Constant.Constant;
-
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import org.openqa.selenium.WebElement;
+import DataObjects.SeatPrice;
+import org.testng.Assert;
 
 
 public class TicketPricePage extends GeneralPage{
@@ -24,16 +21,16 @@ public class TicketPricePage extends GeneralPage{
 	    return Utilities.scrollToAndGetText(lblTableName);
 	}
 	
-	public Map<String, String> getPriceTableData() {
-	    Map<String, String> priceData = new HashMap<>();
+	public void verifySeatPrice(SeatPrice expected) {
 	    
-	    List<WebElement> headers = Constant.WEBDRIVER.findElements(By.xpath("//tr[th[contains(text(),'Seat type')]]//td"));
-	    List<WebElement> values = Constant.WEBDRIVER.findElements(By.xpath("//tr[th[contains(text(),'Price (VND)')]]//td"));
+	    String xpathSeat = String.format("//tr[th[contains(text(),'Seat type')]]/td[text()='%s']", expected.getSeatType());
+	    
+	    int colIdx = Constant.WEBDRIVER.findElements(By.xpath(xpathSeat + "/preceding-sibling::td")).size() + 1;
+	    
+	    String xpathPrice = String.format("//tr[th[contains(text(),'Price (VND)')]]/td[%d]", colIdx);
+	    String actualPrice = Constant.WEBDRIVER.findElement(By.xpath(xpathPrice)).getText().trim();
 
-	    for (int i = 0; i < headers.size(); i++) {
-	    	priceData.put(headers.get(i).getText().trim(), values.get(i).getText().trim());
-	    }
-	    return priceData;
+	    Assert.assertEquals(actualPrice, expected.getPrice(), "Price for " + expected.getSeatType() + " does not match!");
 	}
 	
 }

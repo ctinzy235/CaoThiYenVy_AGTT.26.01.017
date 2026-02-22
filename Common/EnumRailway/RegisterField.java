@@ -1,4 +1,4 @@
-package Constant;
+package EnumRailway;
 
 public enum RegisterField {
 	EMAIL("email"),

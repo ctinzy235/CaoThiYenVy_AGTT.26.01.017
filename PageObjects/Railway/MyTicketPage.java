@@ -13,14 +13,15 @@ public class MyTicketPage extends GeneralPage{
 	private String btnCancelXpath = "//tr[td[1][text()='%s']]//input";
 	private String lastCancelledId;
 
-	public void clickCancelButton(String no) {
+	public MyTicketPage clickCancelButton(String rowNumber) {
 	
-		By cancelBtnLocator = By.xpath(String.format(btnCancelXpath, no));
+		By cancelBtnLocator = By.xpath(String.format(btnCancelXpath, rowNumber));
 		WebElement cancelBtn = Constant.WEBDRIVER.findElement(WaitUtils.waitForClickable(cancelBtnLocator));
 		String onclickValue = cancelBtn.getAttribute("onclick");
 	    this.lastCancelledId = onclickValue.replaceAll("[^0-9]", "");
 	    Utilities.scrollToAndClick(cancelBtn);
 	    Utilities.acceptAlert();
+	    return this;
 	}
 	
 	public String getLastCancelledId() {

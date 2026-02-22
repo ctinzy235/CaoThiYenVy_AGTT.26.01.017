@@ -1,61 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="16" passed="0" failed="7" skipped="9">
+<testng-results ignored="0" total="16" passed="10" failed="6" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-11T16:09:36 ICT" name="Railway Suite" finished-at="2026-02-11T16:13:05 ICT" duration-ms="208495">
+  <suite started-at="2026-02-22T19:19:28 ICT" name="Railway Suite" finished-at="2026-02-22T19:28:16 ICT" duration-ms="528107">
     <groups>
     </groups>
-    <test started-at="2026-02-11T16:09:36 ICT" name="Run on Firefox" finished-at="2026-02-11T16:13:05 ICT" duration-ms="208495">
+    <test started-at="2026-02-22T19:19:28 ICT" name="Run on Chrome" finished-at="2026-02-22T19:28:16 ICT" duration-ms="528107">
       <class name="Railway.ResetPasswordTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.ResetPasswordTest@55b5f5d2]" started-at="2026-02-11T16:12:55 ICT" name="beforeMethod" finished-at="2026-02-11T16:13:02 ICT" duration-ms="7138" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.ResetPasswordTest@69c81773]" started-at="2026-02-22T19:21:42 ICT" name="beforeMethod" finished-at="2026-02-22T19:21:43 ICT" duration-ms="1696" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[firefox]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC10()[pri:0, instance:Railway.ResetPasswordTest@55b5f5d2]" started-at="2026-02-11T16:13:02 ICT" name="TC10" finished-at="2026-02-11T16:13:05 ICT" duration-ms="2729" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method signature="TC10()[pri:0, instance:Railway.ResetPasswordTest@69c81773]" started-at="2026-02-22T19:21:43 ICT" name="TC10" finished-at="2026-02-22T19:22:55 ICT" duration-ms="71238" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Failed to decode response from marionette
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [04cb50f6-ab13-42fd-ab39-fcece6fdd938, findElement {using=xpath, value=//span[@id='inbox-id']}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 19884, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 04cb50f6-ab13-42fd-ab39-fcece6fdd938]]>
+              <![CDATA[The validation message does not match the expected message expected [The new password cannot be the same with the current password] but found [Password changed! Click here to login.]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [04cb50f6-ab13-42fd-ab39-fcece6fdd938, findElement {using=xpath, value=//span[@id='inbox-id']}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 19884, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 04cb50f6-ab13-42fd-ab39-fcece6fdd938
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:758)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:751)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:207)
-at Common.WaitUtils.waitForClickable(WaitUtils.java:19)
-at Common.WaitUtils.waitForClickable(WaitUtils.java:14)
-at Common.Utilities.scrollToAndClick(Utilities.java:33)
-at GuerrillaMail.GeneralPage.creatMail(GeneralPage.java:31)
-at Railway.ResetPasswordTest.TC10(ResetPasswordTest.java:21)
+              <![CDATA[java.lang.AssertionError: The validation message does not match the expected message expected [The new password cannot be the same with the current password] but found [Password changed! Click here to login.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at Railway.ResetPasswordTest.TC10(ResetPasswordTest.java:63)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -86,139 +61,97 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC10 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.ResetPasswordTest@55b5f5d2]" started-at="2026-02-11T16:13:05 ICT" name="afterMethod" finished-at="2026-02-11T16:13:05 ICT" duration-ms="15" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [04cb50f6-ab13-42fd-ab39-fcece6fdd938, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 19884, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 04cb50f6-ab13-42fd-ab39-fcece6fdd938]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [04cb50f6-ab13-42fd-ab39-fcece6fdd938, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 19884, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 04cb50f6-ab13-42fd-ab39-fcece6fdd938
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.ResetPasswordTest@69c81773]" started-at="2026-02-22T19:22:55 ICT" name="afterMethod" finished-at="2026-02-22T19:22:55 ICT" duration-ms="653" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.ResetPasswordTest@55b5f5d2]" started-at="2026-02-11T16:13:05 ICT" name="beforeMethod" finished-at="2026-02-11T16:13:05 ICT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.ResetPasswordTest@69c81773]" started-at="2026-02-22T19:22:55 ICT" name="beforeMethod" finished-at="2026-02-22T19:22:57 ICT" duration-ms="1614" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC11()[pri:0, instance:Railway.ResetPasswordTest@55b5f5d2]" started-at="2026-02-11T16:13:05 ICT" name="TC11" finished-at="2026-02-11T16:13:05 ICT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [04cb50f6-ab13-42fd-ab39-fcece6fdd938, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 19884, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 04cb50f6-ab13-42fd-ab39-fcece6fdd938]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [04cb50f6-ab13-42fd-ab39-fcece6fdd938, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 19884, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 04cb50f6-ab13-42fd-ab39-fcece6fdd938
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+        <test-method signature="TC11()[pri:0, instance:Railway.ResetPasswordTest@69c81773]" started-at="2026-02-22T19:22:57 ICT" name="TC11" finished-at="2026-02-22T19:24:06 ICT" duration-ms="69011" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC11 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.ResetPasswordTest@55b5f5d2]" started-at="2026-02-11T16:13:05 ICT" name="afterMethod" finished-at="2026-02-11T16:13:05 ICT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.ResetPasswordTest@69c81773]" started-at="2026-02-22T19:24:06 ICT" name="afterMethod" finished-at="2026-02-22T19:24:07 ICT" duration-ms="514" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- Railway.ResetPasswordTest -->
       <class name="Railway.LoginTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:31 ICT" name="beforeMethod" finished-at="2026-02-11T16:12:39 ICT" duration-ms="7174" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:19:28 ICT" name="beforeMethod" finished-at="2026-02-22T19:19:32 ICT" duration-ms="3757" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[firefox]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC01()[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:39 ICT" name="TC01" finished-at="2026-02-11T16:12:41 ICT" duration-ms="2159" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method signature="TC01()[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:19:32 ICT" name="TC01" finished-at="2026-02-22T19:19:40 ICT" duration-ms="7896" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC01 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:19:40 ICT" name="afterMethod" finished-at="2026-02-22T19:19:40 ICT" duration-ms="613" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:19:40 ICT" name="beforeMethod" finished-at="2026-02-22T19:19:42 ICT" duration-ms="1468" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC02()[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:19:42 ICT" name="TC02" finished-at="2026-02-22T19:19:48 ICT" duration-ms="6571" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC02 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:19:48 ICT" name="afterMethod" finished-at="2026-02-22T19:19:49 ICT" duration-ms="507" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:19:49 ICT" name="beforeMethod" finished-at="2026-02-22T19:19:50 ICT" duration-ms="1601" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC03()[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:19:50 ICT" name="TC03" finished-at="2026-02-22T19:19:57 ICT" duration-ms="6626" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Failed to decode response from marionette
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f815e0e6-dc01-429b-b72e-20ec0ce83da2, findElement {using=xpath, value=//div[@id='menu']//span[text()='Login']}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26700, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f815e0e6-dc01-429b-b72e-20ec0ce83da2]]>
+              <![CDATA[Error message for invalid password is not displayed correctly! expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f815e0e6-dc01-429b-b72e-20ec0ce83da2, findElement {using=xpath, value=//div[@id='menu']//span[text()='Login']}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26700, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f815e0e6-dc01-429b-b72e-20ec0ce83da2
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:758)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:751)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:207)
-at Common.WaitUtils.waitForClickable(WaitUtils.java:19)
-at Common.WaitUtils.waitForClickable(WaitUtils.java:14)
-at Common.Utilities.scrollToAndClick(Utilities.java:33)
-at Railway.GeneralPage.gotoPage(GeneralPage.java:34)
-at Railway.LoginTest.TC01(LoginTest.java:24)
+              <![CDATA[java.lang.AssertionError: Error message for invalid password is not displayed correctly! expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at Railway.LoginTest.TC03(LoginTest.java:89)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -249,268 +182,134 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC01 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="afterMethod" finished-at="2026-02-11T16:12:41 ICT" duration-ms="69" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f815e0e6-dc01-429b-b72e-20ec0ce83da2, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26700, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f815e0e6-dc01-429b-b72e-20ec0ce83da2]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f815e0e6-dc01-429b-b72e-20ec0ce83da2, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26700, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f815e0e6-dc01-429b-b72e-20ec0ce83da2
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="beforeMethod" finished-at="2026-02-11T16:12:41 ICT" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC02()[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="TC02" finished-at="2026-02-11T16:12:41 ICT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f815e0e6-dc01-429b-b72e-20ec0ce83da2, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26700, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f815e0e6-dc01-429b-b72e-20ec0ce83da2]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f815e0e6-dc01-429b-b72e-20ec0ce83da2, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26700, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f815e0e6-dc01-429b-b72e-20ec0ce83da2
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC02 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="afterMethod" finished-at="2026-02-11T16:12:41 ICT" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="beforeMethod" finished-at="2026-02-11T16:12:41 ICT" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC03()[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="TC03" finished-at="2026-02-11T16:12:41 ICT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f815e0e6-dc01-429b-b72e-20ec0ce83da2, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26700, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f815e0e6-dc01-429b-b72e-20ec0ce83da2]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f815e0e6-dc01-429b-b72e-20ec0ce83da2, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26700, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f815e0e6-dc01-429b-b72e-20ec0ce83da2
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC03 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="afterMethod" finished-at="2026-02-11T16:12:41 ICT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:19:57 ICT" name="afterMethod" finished-at="2026-02-22T19:19:57 ICT" duration-ms="468" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="beforeMethod" finished-at="2026-02-11T16:12:41 ICT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:19:57 ICT" name="beforeMethod" finished-at="2026-02-22T19:19:59 ICT" duration-ms="1471" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC04()[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="TC04" finished-at="2026-02-11T16:12:41 ICT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
+        <test-method signature="TC04()[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:19:59 ICT" name="TC04" finished-at="2026-02-22T19:20:14 ICT" duration-ms="14861" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f815e0e6-dc01-429b-b72e-20ec0ce83da2, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26700, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f815e0e6-dc01-429b-b72e-20ec0ce83da2]]>
+              <![CDATA[Error message for invalid password is not displayed correctly! expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f815e0e6-dc01-429b-b72e-20ec0ce83da2, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26700, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f815e0e6-dc01-429b-b72e-20ec0ce83da2
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
+              <![CDATA[java.lang.AssertionError: Error message for invalid password is not displayed correctly! expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at Railway.LoginTest.TC04(LoginTest.java:132)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC04 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="afterMethod" finished-at="2026-02-11T16:12:41 ICT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:20:14 ICT" name="afterMethod" finished-at="2026-02-22T19:20:15 ICT" duration-ms="1062" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="beforeMethod" finished-at="2026-02-11T16:12:41 ICT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:20:15 ICT" name="beforeMethod" finished-at="2026-02-22T19:20:16 ICT" duration-ms="1480" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC05()[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="TC05" finished-at="2026-02-11T16:12:41 ICT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f815e0e6-dc01-429b-b72e-20ec0ce83da2, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26700, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f815e0e6-dc01-429b-b72e-20ec0ce83da2]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f815e0e6-dc01-429b-b72e-20ec0ce83da2, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26700, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f815e0e6-dc01-429b-b72e-20ec0ce83da2
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+        <test-method signature="TC05()[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:20:16 ICT" name="TC05" finished-at="2026-02-22T19:20:31 ICT" duration-ms="14445" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC05 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@556d0826]" started-at="2026-02-11T16:12:41 ICT" name="afterMethod" finished-at="2026-02-11T16:12:41 ICT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LoginTest@7ae0a9ec]" started-at="2026-02-22T19:20:31 ICT" name="afterMethod" finished-at="2026-02-22T19:20:32 ICT" duration-ms="1030" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- Railway.LoginTest -->
       <class name="Railway.CancelBookingTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.CancelBookingTest@62ea3440]" started-at="2026-02-11T16:11:48 ICT" name="beforeMethod" finished-at="2026-02-11T16:11:57 ICT" duration-ms="8787" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.CancelBookingTest@7e990ed7]" started-at="2026-02-22T19:27:31 ICT" name="beforeMethod" finished-at="2026-02-22T19:27:33 ICT" duration-ms="1676" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[firefox]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC16()[pri:0, instance:Railway.CancelBookingTest@62ea3440]" started-at="2026-02-11T16:11:57 ICT" name="TC16" finished-at="2026-02-11T16:12:22 ICT" duration-ms="25358" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method signature="TC16()[pri:0, instance:Railway.CancelBookingTest@7e990ed7]" started-at="2026-02-22T19:27:33 ICT" name="TC16" finished-at="2026-02-22T19:28:15 ICT" duration-ms="42272" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Failed to decode response from marionette
+              <![CDATA[Expected condition failed: waiting for element found by By.xpath: //div[@id='menu']//span[text()='Register'] to be clickable, but the element was not found: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='menu']//span[text()='Register']"}.
+(tried for 30 seconds with 500 milliseconds interval)
 Build info: version: '4.40.0', revision: 'b3333f1'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [b1e0e3c2-d9b1-42d3-a7d1-da92d699c0cf, findElement {using=xpath, value=//span[@id='inbox-id']}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 20084, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: b1e0e3c2-d9b1-42d3-a7d1-da92d699c0cf]]>
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.109, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\DEEL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53143}, goog:processID: 61260, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53143/devtoo..., se:cdpVersion: 145.0.7632.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3eeecaa006f0eb3b5efd47569c8ff044]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //div[@id='menu']//span[text()='Register'] to be clickable, but the element was not found: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='menu']//span[text()='Register']"}.
+(tried for 30 seconds with 500 milliseconds interval)
 Build info: version: '4.40.0', revision: 'b3333f1'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [b1e0e3c2-d9b1-42d3-a7d1-da92d699c0cf, findElement {using=xpath, value=//span[@id='inbox-id']}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 20084, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: b1e0e3c2-d9b1-42d3-a7d1-da92d699c0cf
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:758)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:751)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:207)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.109, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\DEEL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53143}, goog:processID: 61260, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53143/devtoo..., se:cdpVersion: 145.0.7632.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3eeecaa006f0eb3b5efd47569c8ff044
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
 at Common.WaitUtils.waitForClickable(WaitUtils.java:19)
 at Common.WaitUtils.waitForClickable(WaitUtils.java:14)
 at Common.Utilities.scrollToAndClick(Utilities.java:33)
-at GuerrillaMail.GeneralPage.creatMail(GeneralPage.java:31)
-at Railway.CancelBookingTest.TC16(CancelBookingTest.java:20)
+at Railway.GeneralPage.goToPage(GeneralPage.java:35)
+at Railway.CancelBookingTest.TC16(CancelBookingTest.java:30)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -541,289 +340,112 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC16 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CancelBookingTest@62ea3440]" started-at="2026-02-11T16:12:22 ICT" name="afterMethod" finished-at="2026-02-11T16:12:22 ICT" duration-ms="15" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [b1e0e3c2-d9b1-42d3-a7d1-da92d699c0cf, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 20084, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: b1e0e3c2-d9b1-42d3-a7d1-da92d699c0cf]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [b1e0e3c2-d9b1-42d3-a7d1-da92d699c0cf, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 20084, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: b1e0e3c2-d9b1-42d3-a7d1-da92d699c0cf
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CancelBookingTest@7e990ed7]" started-at="2026-02-22T19:28:15 ICT" name="afterMethod" finished-at="2026-02-22T19:28:16 ICT" duration-ms="738" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- Railway.CancelBookingTest -->
       <class name="Railway.CreatAccountTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.CreatAccountTest@27953a83]" started-at="2026-02-11T16:12:22 ICT" name="beforeMethod" finished-at="2026-02-11T16:12:29 ICT" duration-ms="6963" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.CreatAccountTest@30f842ca]" started-at="2026-02-22T19:20:44 ICT" name="beforeMethod" finished-at="2026-02-22T19:20:45 ICT" duration-ms="1323" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[firefox]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC07()[pri:0, instance:Railway.CreatAccountTest@27953a83]" started-at="2026-02-11T16:12:29 ICT" name="TC07" finished-at="2026-02-11T16:12:31 ICT" duration-ms="1906" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Failed to decode response from marionette
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [670fa853-46d5-422a-a5d5-8b943d15170c, findElement {using=xpath, value=//div[@id='menu']//span[text()='Register']}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 27564, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 670fa853-46d5-422a-a5d5-8b943d15170c]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [670fa853-46d5-422a-a5d5-8b943d15170c, findElement {using=xpath, value=//div[@id='menu']//span[text()='Register']}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 27564, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 670fa853-46d5-422a-a5d5-8b943d15170c
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:758)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:751)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:207)
-at Common.WaitUtils.waitForClickable(WaitUtils.java:19)
-at Common.WaitUtils.waitForClickable(WaitUtils.java:14)
-at Common.Utilities.scrollToAndClick(Utilities.java:33)
-at Railway.GeneralPage.gotoPage(GeneralPage.java:34)
-at Railway.CreatAccountTest.TC07(CreatAccountTest.java:27)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+        <test-method signature="TC07()[pri:0, instance:Railway.CreatAccountTest@30f842ca]" started-at="2026-02-22T19:20:45 ICT" name="TC07" finished-at="2026-02-22T19:20:54 ICT" duration-ms="8627" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC07 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CreatAccountTest@27953a83]" started-at="2026-02-11T16:12:31 ICT" name="afterMethod" finished-at="2026-02-11T16:12:31 ICT" duration-ms="164" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [670fa853-46d5-422a-a5d5-8b943d15170c, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 27564, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 670fa853-46d5-422a-a5d5-8b943d15170c]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [670fa853-46d5-422a-a5d5-8b943d15170c, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 27564, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 670fa853-46d5-422a-a5d5-8b943d15170c
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CreatAccountTest@30f842ca]" started-at="2026-02-22T19:20:54 ICT" name="afterMethod" finished-at="2026-02-22T19:20:54 ICT" duration-ms="562" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.CreatAccountTest@27953a83]" started-at="2026-02-11T16:12:31 ICT" name="beforeMethod" finished-at="2026-02-11T16:12:31 ICT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.CreatAccountTest@30f842ca]" started-at="2026-02-22T19:20:54 ICT" name="beforeMethod" finished-at="2026-02-22T19:20:56 ICT" duration-ms="1395" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC08()[pri:0, instance:Railway.CreatAccountTest@27953a83]" started-at="2026-02-11T16:12:31 ICT" name="TC08" finished-at="2026-02-11T16:12:31 ICT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [670fa853-46d5-422a-a5d5-8b943d15170c, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 27564, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 670fa853-46d5-422a-a5d5-8b943d15170c]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [670fa853-46d5-422a-a5d5-8b943d15170c, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 27564, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 670fa853-46d5-422a-a5d5-8b943d15170c
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+        <test-method signature="TC08()[pri:0, instance:Railway.CreatAccountTest@30f842ca]" started-at="2026-02-22T19:20:56 ICT" name="TC08" finished-at="2026-02-22T19:21:04 ICT" duration-ms="8831" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC08 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CreatAccountTest@27953a83]" started-at="2026-02-11T16:12:31 ICT" name="afterMethod" finished-at="2026-02-11T16:12:31 ICT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CreatAccountTest@30f842ca]" started-at="2026-02-22T19:21:04 ICT" name="afterMethod" finished-at="2026-02-22T19:21:05 ICT" duration-ms="496" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.CreatAccountTest@27953a83]" started-at="2026-02-11T16:12:31 ICT" name="beforeMethod" finished-at="2026-02-11T16:12:31 ICT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.CreatAccountTest@30f842ca]" started-at="2026-02-22T19:21:05 ICT" name="beforeMethod" finished-at="2026-02-22T19:21:06 ICT" duration-ms="1365" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC09()[pri:0, instance:Railway.CreatAccountTest@27953a83]" started-at="2026-02-11T16:12:31 ICT" name="TC09" finished-at="2026-02-11T16:12:31 ICT" duration-ms="2" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [670fa853-46d5-422a-a5d5-8b943d15170c, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 27564, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 670fa853-46d5-422a-a5d5-8b943d15170c]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [670fa853-46d5-422a-a5d5-8b943d15170c, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 27564, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 670fa853-46d5-422a-a5d5-8b943d15170c
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+        <test-method signature="TC09()[pri:0, instance:Railway.CreatAccountTest@30f842ca]" started-at="2026-02-22T19:21:06 ICT" name="TC09" finished-at="2026-02-22T19:21:41 ICT" duration-ms="34885" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC09 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CreatAccountTest@27953a83]" started-at="2026-02-11T16:12:31 ICT" name="afterMethod" finished-at="2026-02-11T16:12:31 ICT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.CreatAccountTest@30f842ca]" started-at="2026-02-22T19:21:41 ICT" name="afterMethod" finished-at="2026-02-22T19:21:42 ICT" duration-ms="594" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- Railway.CreatAccountTest -->
       <class name="Railway.BookTicketTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.BookTicketTest@42f48531]" started-at="2026-02-11T16:09:37 ICT" name="beforeMethod" finished-at="2026-02-11T16:09:55 ICT" duration-ms="18777" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.BookTicketTest@4d14b6c2]" started-at="2026-02-22T19:24:07 ICT" name="beforeMethod" finished-at="2026-02-22T19:24:08 ICT" duration-ms="1721" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[firefox]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC12()[pri:0, instance:Railway.BookTicketTest@42f48531]" started-at="2026-02-11T16:09:55 ICT" name="TC12" finished-at="2026-02-11T16:10:58 ICT" duration-ms="62550" status="FAIL">
+        <test-method signature="TC12()[pri:0, instance:Railway.BookTicketTest@4d14b6c2]" started-at="2026-02-22T19:24:08 ICT" name="TC12" finished-at="2026-02-22T19:24:58 ICT" duration-ms="49396" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element found by By.xpath: //td[contains(text(), 'Please confirm your account')] to be clickable, but the element was not found: org.openqa.selenium.NoSuchElementException: Unable to locate element: //td[contains(text(), 'Please confirm your account')].
+              <![CDATA[Expected condition failed: waiting for element found by By.xpath: //span[@id='inbox-id'] to be clickable, but the element was not found: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='inbox-id']"}.
 (tried for 30 seconds with 500 milliseconds interval)
 Build info: version: '4.40.0', revision: 'b3333f1'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 14636, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 3a852197-85e2-4673-9b4a-279049c2dba4]]>
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.109, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\DEEL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58774}, goog:processID: 61100, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58774/devtoo..., se:cdpVersion: 145.0.7632.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9dec8f78df348029649c6008cfcadbde]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //td[contains(text(), 'Please confirm your account')] to be clickable, but the element was not found: org.openqa.selenium.NoSuchElementException: Unable to locate element: //td[contains(text(), 'Please confirm your account')].
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //span[@id='inbox-id'] to be clickable, but the element was not found: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='inbox-id']"}.
 (tried for 30 seconds with 500 milliseconds interval)
 Build info: version: '4.40.0', revision: 'b3333f1'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 14636, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 3a852197-85e2-4673-9b4a-279049c2dba4
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.109, chrome: {chromedriverVersion: 145.0.7632.77 (da516187054a..., userDataDir: C:\Users\DEEL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58774}, goog:processID: 61100, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58774/devtoo..., se:cdpVersion: 145.0.7632.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9dec8f78df348029649c6008cfcadbde
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
 at Common.WaitUtils.waitForClickable(WaitUtils.java:19)
 at Common.WaitUtils.waitForClickable(WaitUtils.java:14)
-at GuerrillaMail.GeneralPage.confirmMail(GeneralPage.java:68)
-at Railway.BookTicketTest.TC12(BookTicketTest.java:35)
+at Common.Utilities.scrollToAndClick(Utilities.java:33)
+at GuerrillaMail.GeneralPage.confirmAccountViaMail(GeneralPage.java:55)
+at Railway.BookTicketTest.TC12(BookTicketTest.java:38)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -858,59 +480,80 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC12 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@42f48531]" started-at="2026-02-11T16:10:58 ICT" name="afterMethod" finished-at="2026-02-11T16:11:01 ICT" duration-ms="2901" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@4d14b6c2]" started-at="2026-02-22T19:24:58 ICT" name="afterMethod" finished-at="2026-02-22T19:25:00 ICT" duration-ms="1837" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.BookTicketTest@42f48531]" started-at="2026-02-11T16:11:01 ICT" name="beforeMethod" finished-at="2026-02-11T16:11:09 ICT" duration-ms="8021" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.BookTicketTest@4d14b6c2]" started-at="2026-02-22T19:25:00 ICT" name="beforeMethod" finished-at="2026-02-22T19:25:02 ICT" duration-ms="1999" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[firefox]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC13()[pri:0, instance:Railway.BookTicketTest@42f48531]" started-at="2026-02-11T16:11:09 ICT" name="TC13" finished-at="2026-02-11T16:11:48 ICT" duration-ms="38950" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method signature="TC13()[pri:0, instance:Railway.BookTicketTest@4d14b6c2]" started-at="2026-02-22T19:25:02 ICT" name="TC13" finished-at="2026-02-22T19:25:48 ICT" duration-ms="46479" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC13 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@4d14b6c2]" started-at="2026-02-22T19:25:48 ICT" name="afterMethod" finished-at="2026-02-22T19:25:49 ICT" duration-ms="635" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.BookTicketTest@4d14b6c2]" started-at="2026-02-22T19:25:49 ICT" name="beforeMethod" finished-at="2026-02-22T19:25:50 ICT" duration-ms="1456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC14()[pri:0, instance:Railway.BookTicketTest@4d14b6c2]" started-at="2026-02-22T19:25:50 ICT" name="TC14" finished-at="2026-02-22T19:26:37 ICT" duration-ms="46546" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC14 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@4d14b6c2]" started-at="2026-02-22T19:26:37 ICT" name="afterMethod" finished-at="2026-02-22T19:26:37 ICT" duration-ms="680" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.BookTicketTest@4d14b6c2]" started-at="2026-02-22T19:26:37 ICT" name="beforeMethod" finished-at="2026-02-22T19:26:39 ICT" duration-ms="1562" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC15()[pri:0, instance:Railway.BookTicketTest@4d14b6c2]" started-at="2026-02-22T19:26:39 ICT" name="TC15" finished-at="2026-02-22T19:27:31 ICT" duration-ms="51666" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Failed to decode response from marionette
+              <![CDATA[Cannot locate option with text: 2/23/2026
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: '4.40.0', revision: 'b3333f1'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [dbbc9bfc-94c5-412d-9e04-d8f7d8449bff, findElement {using=xpath, value=//span[@id='inbox-id']}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 504, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: dbbc9bfc-94c5-412d-9e04-d8f7d8449bff]]>
+Driver info: driver.version: unknown]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with text: 2/23/2026
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
 Build info: version: '4.40.0', revision: 'b3333f1'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [dbbc9bfc-94c5-412d-9e04-d8f7d8449bff, findElement {using=xpath, value=//span[@id='inbox-id']}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 504, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: dbbc9bfc-94c5-412d-9e04-d8f7d8449bff
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:424)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:418)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:758)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:751)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:207)
-at Common.WaitUtils.waitForClickable(WaitUtils.java:19)
-at Common.WaitUtils.waitForClickable(WaitUtils.java:14)
-at Common.Utilities.scrollToAndClick(Utilities.java:33)
-at GuerrillaMail.GeneralPage.confirmMail(GeneralPage.java:56)
-at Railway.BookTicketTest.TC13(BookTicketTest.java:98)
+Driver info: driver.version: unknown
+at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:400)
+at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:128)
+at Railway.BookTicketPage.selectOptionByText(BookTicketPage.java:38)
+at Railway.BookTicketPage.fillTicketFormAndSubmit(BookTicketPage.java:64)
+at Railway.BookTicketPage.bookTicket(BookTicketPage.java:85)
+at Railway.BookTicketTest.TC15(BookTicketTest.java:239)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -941,247 +584,36 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC13 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@42f48531]" started-at="2026-02-11T16:11:48 ICT" name="afterMethod" finished-at="2026-02-11T16:11:48 ICT" duration-ms="198" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [dbbc9bfc-94c5-412d-9e04-d8f7d8449bff, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 504, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: dbbc9bfc-94c5-412d-9e04-d8f7d8449bff]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [dbbc9bfc-94c5-412d-9e04-d8f7d8449bff, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 504, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: dbbc9bfc-94c5-412d-9e04-d8f7d8449bff
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.BookTicketTest@42f48531]" started-at="2026-02-11T16:11:48 ICT" name="beforeMethod" finished-at="2026-02-11T16:11:48 ICT" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC14()[pri:0, instance:Railway.BookTicketTest@42f48531]" started-at="2026-02-11T16:11:48 ICT" name="TC14" finished-at="2026-02-11T16:11:48 ICT" duration-ms="1" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [dbbc9bfc-94c5-412d-9e04-d8f7d8449bff, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 504, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: dbbc9bfc-94c5-412d-9e04-d8f7d8449bff]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [dbbc9bfc-94c5-412d-9e04-d8f7d8449bff, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 504, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: dbbc9bfc-94c5-412d-9e04-d8f7d8449bff
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC14 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@42f48531]" started-at="2026-02-11T16:11:48 ICT" name="afterMethod" finished-at="2026-02-11T16:11:48 ICT" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.BookTicketTest@42f48531]" started-at="2026-02-11T16:11:48 ICT" name="beforeMethod" finished-at="2026-02-11T16:11:48 ICT" duration-ms="0" status="SKIP">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC15()[pri:0, instance:Railway.BookTicketTest@42f48531]" started-at="2026-02-11T16:11:48 ICT" name="TC15" finished-at="2026-02-11T16:11:48 ICT" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [dbbc9bfc-94c5-412d-9e04-d8f7d8449bff, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 504, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: dbbc9bfc-94c5-412d-9e04-d8f7d8449bff]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [dbbc9bfc-94c5-412d-9e04-d8f7d8449bff, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 504, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: dbbc9bfc-94c5-412d-9e04-d8f7d8449bff
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC15 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@42f48531]" started-at="2026-02-11T16:11:48 ICT" name="afterMethod" finished-at="2026-02-11T16:11:48 ICT" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.BookTicketTest@4d14b6c2]" started-at="2026-02-22T19:27:31 ICT" name="afterMethod" finished-at="2026-02-22T19:27:31 ICT" duration-ms="648" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- Railway.BookTicketTest -->
       <class name="Railway.LogoutTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.LogoutTest@66ce957f]" started-at="2026-02-11T16:12:41 ICT" name="beforeMethod" finished-at="2026-02-11T16:12:48 ICT" duration-ms="7147" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:Railway.LogoutTest@dc7df28]" started-at="2026-02-22T19:20:32 ICT" name="beforeMethod" finished-at="2026-02-22T19:20:33 ICT" duration-ms="1504" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[firefox]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC06()[pri:0, instance:Railway.LogoutTest@66ce957f]" started-at="2026-02-11T16:12:48 ICT" name="TC06" finished-at="2026-02-11T16:12:55 ICT" duration-ms="6907" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
-            <message>
-              <![CDATA[Browsing context has been discarded
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [6342994b-2ad2-4205-9fcc-6bf1f5d7453f, clearElement {id=c51ed750-6ef2-4ab0-8c9c-7602f50d9cd2}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 29536, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Element: [[FirefoxDriver: firefox on windows (6342994b-2ad2-4205-9fcc-6bf1f5d7453f)] -> xpath: //input[@id='username']]
-Session ID: 6342994b-2ad2-4205-9fcc-6bf1f5d7453f]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: Browsing context has been discarded
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [6342994b-2ad2-4205-9fcc-6bf1f5d7453f, clearElement {id=c51ed750-6ef2-4ab0-8c9c-7602f50d9cd2}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 29536, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Element: [[FirefoxDriver: firefox on windows (6342994b-2ad2-4205-9fcc-6bf1f5d7453f)] -> xpath: //input[@id='username']]
-Session ID: 6342994b-2ad2-4205-9fcc-6bf1f5d7453f
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:129)
-at Common.Utilities.srollToAndSendKeys(Utilities.java:66)
-at Railway.LoginPage.login(LoginPage.java:49)
-at Railway.LogoutTest.TC06(LogoutTest.java:25)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+        <test-method signature="TC06()[pri:0, instance:Railway.LogoutTest@dc7df28]" started-at="2026-02-22T19:20:33 ICT" name="TC06" finished-at="2026-02-22T19:20:43 ICT" duration-ms="9905" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC06 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LogoutTest@66ce957f]" started-at="2026-02-11T16:12:55 ICT" name="afterMethod" finished-at="2026-02-11T16:12:55 ICT" duration-ms="197" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Failed to decode response from marionette
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [6342994b-2ad2-4205-9fcc-6bf1f5d7453f, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 29536, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 6342994b-2ad2-4205-9fcc-6bf1f5d7453f]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [6342994b-2ad2-4205-9fcc-6bf1f5d7453f, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.3, moz:accessibilityChecks: false, moz:buildID: 20260203002554, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 29536, moz:profile: C:\Users\DEEL\AppData\Local..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 6342994b-2ad2-4205-9fcc-6bf1f5d7453f
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:126)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:Railway.LogoutTest@dc7df28]" started-at="2026-02-22T19:20:43 ICT" name="afterMethod" finished-at="2026-02-22T19:20:44 ICT" duration-ms="439" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- Railway.LogoutTest -->
-    </test> <!-- Run on Firefox -->
+    </test> <!-- Run on Chrome -->
   </suite> <!-- Railway Suite -->
 </testng-results>

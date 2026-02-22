@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import Common.Utilities;
 import Common.WaitUtils;
 import Constant.Constant; 
-import Constant.MailType;
 
 public class GeneralPage {
 
@@ -50,30 +49,31 @@ public class GeneralPage {
         return finalMail;
     }
 	
-	public static void confirmMail(String username, MailType type) {
-		navigateToWebMail();
-		
-		Utilities.scrollToAndClick(btnInboxID);
-		
-		Utilities.srollToAndSendKeys(txtInboxID, username);
-		
-        Utilities.scrollToAndClick(btnSet);
-        
-        switch (type) {
-        case RESETPASSWORD:
-        	WaitUtils.waitForClickable(btnResetPassword);
-            Utilities.scrollToAndClick(btnResetPassword);
-            break;
-        case CONFIRM:
-        	WaitUtils.waitForClickable(btnConfirmAcc);
-            Utilities.scrollToAndClick(btnConfirmAcc);
-            break;
-        }
-        
-        Utilities.scrollToAndClick(linkConfirm);
-        
-        Utilities.closeCurrentAndSwitchToLatestTab();
+	
+	public static void confirmAccountViaMail(String username) {
+	    navigateToWebMail();
+	    Utilities.scrollToAndClick(btnInboxID);
+	    Utilities.srollToAndSendKeys(txtInboxID, username);
+	    Utilities.scrollToAndClick(btnSet);
+	    
+	    WaitUtils.waitForClickable(btnConfirmAcc);
+	    Utilities.scrollToAndClick(btnConfirmAcc);
+	    
+	    Utilities.scrollToAndClick(linkConfirm);
+	    Utilities.closeCurrentAndSwitchToLatestTab();
 	}
 	
+	public static void confirmResetPasswordViaMail(String username) {
+	    navigateToWebMail();
+	    Utilities.scrollToAndClick(btnInboxID);
+	    Utilities.srollToAndSendKeys(txtInboxID, username);
+	    Utilities.scrollToAndClick(btnSet);
+	    
+	    WaitUtils.waitForClickable(btnResetPassword);
+	    Utilities.scrollToAndClick(btnResetPassword);
+	    
+	    Utilities.scrollToAndClick(linkConfirm);
+	    Utilities.closeCurrentAndSwitchToLatestTab();
+	}
 	
 }

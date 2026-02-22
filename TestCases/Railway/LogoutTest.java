@@ -3,9 +3,9 @@ package Railway;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import Common.Tab;
 import Constant.Constant;
 import DataObjects.User;
+import EnumRailway.Tab;
 
 public class LogoutTest extends TestBase{
 	
@@ -17,16 +17,21 @@ public class LogoutTest extends TestBase{
 		System.out.println("TC06 - User is redirected to Home page after logging out");
 		
 		System.out.println("Step 1. Navigate to QA Railway Website");
+		HomePage homePage = new HomePage();
 		homePage.open();
 		
 		System.out.println("Step 2. Login with valid Email and Password");
 		
-		homePage.gotoPage(Tab.LOGIN); 
-		loginPage.login(user);
+		LoginPage loginPage = new LoginPage();
+		loginPage = homePage.goToPage(Tab.LOGIN, LoginPage.class); 
+		homePage = loginPage.login(user,HomePage.class);
 		
-		homePage.gotoPage(Tab.FAQ);
+		System.out.println("Step 3. Click on \"FAQ\" tab");
+		FAQPage faqPage = new FAQPage();
+		faqPage = homePage.goToPage(Tab.FAQ, FAQPage.class);
 		
-		homePage.gotoPage(Tab.LOGOUT);
+		System.out.println("Step 4. Click on \"Log out\" tab");
+		homePage = faqPage.goToPage(Tab.LOGOUT,HomePage.class);
 	
 		System.out.println("VP: Home page displays.");
 		Assert.assertEquals(Constant.WEBDRIVER.getCurrentUrl(),Constant.RAILWAY_URL, "User was not redirected to Home page after logging out!");

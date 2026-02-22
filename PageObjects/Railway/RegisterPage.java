@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 import Common.Utilities;
 import DataObjects.User;
-import Constant.RegisterField;
+import EnumRailway.RegisterField;
 
 
 public class RegisterPage extends GeneralPage{
@@ -44,7 +44,7 @@ public class RegisterPage extends GeneralPage{
 	}
 	
 	// Methods
-	public void register(User user) {
+	public RegisterPage register(User user) {
 
 		Utilities.srollToAndSendKeys(getFieldLocator(RegisterField.EMAIL),user.getEmail());
 		Utilities.srollToAndSendKeys(getFieldLocator(RegisterField.PASSWORD),user.getPassword());
@@ -52,5 +52,6 @@ public class RegisterPage extends GeneralPage{
 		Utilities.srollToAndSendKeys(getFieldLocator(RegisterField.PID),user.getPid());
 		Utilities.scrollToAndClick(btnRegister);	
 		
+		return this;
 	}
 }

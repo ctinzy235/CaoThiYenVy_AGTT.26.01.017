@@ -3,9 +3,9 @@ package Railway;
 import org.openqa.selenium.By;
 //import org.openqa.selenium.WebElement;
 
-import Common.Tab;
 import Common.Utilities;
 import Constant.Constant;
+import EnumRailway.Tab;
 
 
 public class GeneralPage {
@@ -30,10 +30,20 @@ public class GeneralPage {
         }
     }
     
-    public void gotoPage(Tab tab) {
+    
+    public <T> T goToPage(Tab tab, Class<T> pageClass) {
         Utilities.scrollToAndClick(getTabLocator(tab));
+        try {
+            return pageClass.getDeclaredConstructor().newInstance();
+        } catch (Exception e) {
+            throw new RuntimeException("Could not create page: " + pageClass.getName());
+        }
     }
     
+    public int getColumnIndex(String columnName) {
+	    String xpath = String.format("//th[text()='%s']/preceding-sibling::th", columnName);
+	    return Constant.WEBDRIVER.findElements(By.xpath(xpath)).size() + 1;
+	}
 
     
 }

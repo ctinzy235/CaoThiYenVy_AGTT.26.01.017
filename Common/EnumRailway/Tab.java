@@ -1,4 +1,4 @@
-package Common;
+package EnumRailway;
 
 public enum Tab {
 	LOGIN("Login"),

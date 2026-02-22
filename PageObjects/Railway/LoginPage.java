@@ -45,26 +45,41 @@ public class LoginPage extends GeneralPage {
     
     
     // Methods
-    public HomePage login(User user) {
+//    public HomePage login(User user) {
+//        Utilities.srollToAndSendKeys(txtUsername, user.getEmail());
+//        Utilities.srollToAndSendKeys(txtPassword, user.getPassword());
+//        Utilities.scrollToAndClick(btnLogin);
+//        return new HomePage();
+//    }
+    
+    public <T> T login(User user, Class<T> pageClass) {
         Utilities.srollToAndSendKeys(txtUsername, user.getEmail());
         Utilities.srollToAndSendKeys(txtPassword, user.getPassword());
         Utilities.scrollToAndClick(btnLogin);
-        return new HomePage();
+
+        try {
+            // Tự động khởi tạo trang bạn mong muốn (HomePage hoặc LoginPage)
+            return pageClass.getDeclaredConstructor().newInstance();
+        } catch (Exception e) {
+            throw new RuntimeException("Could not create page: " + pageClass.getName());
+        }
     }
     
-    public void gotoForgotPasswordPage() {
+    public LoginPage gotoForgotPasswordPage() {
     	Utilities.scrollToAndClick(linkForgotPassword);
+    	return this;
     }
     
-    public void enterMailAddressResetPassword(String email) {
+    public LoginPage enterMailAddressResetPassword(String email) {
     	Utilities.srollToAndSendKeys(txtEmailAddress, email);
     	Utilities.scrollToAndClick(btnSendInstruction);
+    	return this;
     }
     
-    public void resetPassword(String newPassword, String confirmPassword) {
+    public LoginPage resetPassword(String newPassword, String confirmPassword) {
     	Utilities.srollToAndSendKeys(txtNewPassword, newPassword);
     	Utilities.srollToAndSendKeys(txtConfirmPassword,confirmPassword);
     	Utilities.scrollToAndClick(btnResetPassword);
-    	
+    	return this;
     }
 }

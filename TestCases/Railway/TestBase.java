@@ -10,14 +10,7 @@ import org.testng.annotations.Optional;
 import Constant.Constant;
 
 public class TestBase {
-	
-	protected HomePage homePage = new HomePage();
-    protected LoginPage loginPage = new LoginPage();
-    protected RegisterPage registerPage = new RegisterPage();
-    protected BookTicketPage bookTicketPage = new BookTicketPage();
-    protected TimeTablePage timeTablePage = new TimeTablePage();
-    protected TicketPricePage ticketPricePage  = new TicketPricePage();
-    protected MyTicketPage myTicketPage = new MyTicketPage();
+
 
     @Parameters("browser")
 	@BeforeMethod

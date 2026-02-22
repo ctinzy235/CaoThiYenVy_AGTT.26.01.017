@@ -4,10 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import Constant.Constant;
 import DataObjects.User;
+import EnumRailway.Tab;
 import GuerrillaMail.GeneralPage;
 import Common.Random;
-import Common.Tab;
-import Constant.MailType;
 
 
 public class ResetPasswordTest extends TestBase{
@@ -21,29 +20,32 @@ public class ResetPasswordTest extends TestBase{
 		String fullMail = GeneralPage.creatMail(userName);
 		User userRegister = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD, Constant.PID);
 		
-		System.out.println("TC10 - Reset password shows error if the new password is same as current");
 		System.out.println("Pre-condition: an actived account is existing");
-		
+		HomePage homePage = new HomePage();
 		homePage.open();
-		homePage.gotoPage(Tab.REGISTER);
-		registerPage.register(userRegister);
-		GeneralPage.confirmMail(userName,MailType.CONFIRM);
 		
+		RegisterPage registerPage = new RegisterPage();
+		registerPage = homePage.goToPage(Tab.REGISTER, RegisterPage.class);
+		registerPage = registerPage.register(userRegister);
+		GeneralPage.confirmAccountViaMail(userName);
+		
+		System.out.println("TC10 - Reset password shows error if the new password is same as current");
 		System.out.println("1. Navigate to QA Railway Login page");
-		homePage.gotoPage(Tab.LOGIN);
+		LoginPage loginPage = new LoginPage();
+		loginPage = homePage.goToPage(Tab.LOGIN, LoginPage.class);
 
 		System.out.println("2. Click on \"Forgot Password page\" link");
-		loginPage.gotoForgotPasswordPage();
+		loginPage = loginPage.gotoForgotPasswordPage();
 		
 		System.out.println("3. Enter the email address of the activated account");
 		System.out.println("4. Click on \"Send Instructions\" button");
-		loginPage.enterMailAddressResetPassword(fullMail);
+		loginPage = loginPage.enterMailAddressResetPassword(fullMail);
 		
 		System.out.println("5. Login to the mailbox (the same mailbox when creating account) ");
 		System.out.println("6. Open email with subject contaning \"Please reset your password\" and the email of the account at step 3");
 		System.out.println("7. Click on reset link");
 		
-		GeneralPage.confirmMail(userName,MailType.RESETPASSWORD);
+		GeneralPage.confirmResetPasswordViaMail(userName);
 		
 		String actualMsg = loginPage.getPasswordChangeForm();
 
@@ -53,12 +55,12 @@ public class ResetPasswordTest extends TestBase{
 		System.out.println("8. Input same password into 2 fields  \"new password\" and \"confirm password\"");
 		System.out.println("9. Click Reset Password");
 		
-		loginPage.resetPassword(Constant.PASSWORD, Constant.PASSWORD);
+		loginPage = loginPage.resetPassword(Constant.PASSWORD, Constant.PASSWORD);
 		
 		String actualPasswordChangeMsg = loginPage.getPasswordChangeSuccessMsg();
 
 		System.out.println("VP: Message \"The new password cannot be the same with the current password\" is shown");
-		Assert.assertEquals(expectedPasswordChangeMsg, actualPasswordChangeMsg, "The validation message does not match the expected message");
+		Assert.assertEquals(actualPasswordChangeMsg,expectedPasswordChangeMsg, "The validation message does not match the expected message");
 		
 	}
 	
@@ -72,29 +74,33 @@ public class ResetPasswordTest extends TestBase{
 		String fullMail = GeneralPage.creatMail(userName);
 		User userRegister = new User(fullMail, Constant.PASSWORD,Constant.PASSWORD, Constant.PID);
 		
-		System.out.println("TC11 - Reset password shows error if the new password and confirm password doesn't match");
 		System.out.println("Pre-condition: an actived account is existing");
 		
+		HomePage homePage = new HomePage();
 		homePage.open();
-		homePage.gotoPage(Tab.REGISTER);
-		registerPage.register(userRegister);
-		GeneralPage.confirmMail(userName,MailType.CONFIRM);
 		
+		RegisterPage registerPage = new RegisterPage();
+		registerPage = homePage.goToPage(Tab.REGISTER, RegisterPage.class);
+		registerPage = registerPage.register(userRegister);
+		GeneralPage.confirmAccountViaMail(userName);
+		
+		System.out.println("TC11 - Reset password shows error if the new password and confirm password doesn't match");
 		System.out.println("1. Navigate to QA Railway Login page");
-		homePage.gotoPage(Tab.LOGIN);
+		LoginPage loginPage = new LoginPage();
+		loginPage = homePage.goToPage(Tab.LOGIN, LoginPage.class);
 
 		System.out.println("2. Click on \"Forgot Password page\" link");
-		loginPage.gotoForgotPasswordPage();
+		loginPage = loginPage.gotoForgotPasswordPage();
 		
 		System.out.println("3. Enter the email address of the activated account");
 		System.out.println("4. Click on \"Send Instructions\" button");
-		loginPage.enterMailAddressResetPassword(fullMail);
+		loginPage = loginPage.enterMailAddressResetPassword(fullMail);
 		
 		System.out.println("5. Login to the mailbox (the same mailbox when creating account) ");
 		System.out.println("6. Open email with subject contaning \"Please reset your password\" and the email of the account at step 3");
 		System.out.println("7. Click on reset link");
 		
-		GeneralPage.confirmMail(userName,MailType.RESETPASSWORD);
+		GeneralPage.confirmResetPasswordViaMail(userName);
 		
 		String actualMsg = loginPage.getPasswordChangeForm();
 
@@ -104,7 +110,7 @@ public class ResetPasswordTest extends TestBase{
 		System.out.println("8. Input different input into 2 fields  \"new password\" and \"confirm password\"");
 		System.out.println("9. Click Reset Password");
 		
-		loginPage.resetPassword(Constant.PASSWORD,Constant.CONFIRMPASSWORD);
+		loginPage = loginPage.resetPassword(Constant.PASSWORD,Constant.CONFIRMPASSWORD);
 		
 		String actualPasswordChangeMsg = loginPage.getPasswordChangeErrorMsg();
 		
@@ -114,7 +120,7 @@ public class ResetPasswordTest extends TestBase{
 		System.out.println("VP: Error message \"The password confirmation did not match the new password.\" displays next to the confirm password field.");
 		
 		String actualErrMsg = loginPage.getErrConfirmPasswordMsg();
-		Assert.assertEquals(expectedErrMsg, actualErrMsg, "The message does not match the expected message");
+		Assert.assertEquals(actualErrMsg,expectedErrMsg, "The message does not match the expected message");
 		
 	}
 	

@@ -1,16 +1,19 @@
 package DataObjects;
 
+import EnumRailway.SeatType;
+import EnumRailway.Station;
+
 public class BookTicket {
 	private String departDate;
-    private String departFrom;
-    private String arrive;
-    private String seatType;
+    private Station departStation;
+    private Station arriveStation;
+    private SeatType seatType;
     private String ticketAmount;
     
-    public BookTicket(String departDate, String departFrom, String arrive, String seatType, String ticketAmount) {
+    public BookTicket(String departDate, Station departStation, Station arriveStation, SeatType seatType, String ticketAmount) {
     	this.departDate = departDate;
-    	this.departFrom = departFrom;
-    	this.arrive = arrive;
+    	this.departStation = departStation;
+    	this.arriveStation = arriveStation;
     	this.seatType = seatType;
     	this.ticketAmount = ticketAmount;
     }
@@ -21,22 +24,22 @@ public class BookTicket {
 	public void setDepartDate(String departDate) {
 		this.departDate = departDate;
 	}
-	public String getDepartFrom() {
-		return departFrom;
+	public Station getDepartFrom() {
+		return departStation;
 	}
-	public void setDepartFrom(String departFrom) {
-		this.departFrom = departFrom;
+	public void setDepartFrom(Station departFrom) {
+		this.departStation = departFrom;
 	}
-	public String getArrive() {
-		return arrive;
+	public Station getArrive() {
+		return arriveStation;
 	}
-	public void setArrive(String arrive) {
-		this.arrive = arrive;
+	public void setArrive(Station arrive) {
+		this.arriveStation = arrive;
 	}
-	public String getSeatType() {
+	public SeatType getSeatType() {
 		return seatType;
 	}
-	public void setSeatType(String seatType) {
+	public void setSeatType(SeatType seatType) {
 		this.seatType = seatType;
 	}
 	public String getTicketAmount() {
